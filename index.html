@@ -15,7 +15,7 @@ body, html {height: 100%}
   background-position: center;
   background-size: cover;
 }
-#cwt-agent{
+/* #cwt-agent{
   position: fixed;
   bottom: 5vmin;
   right: 5vmin;
@@ -194,7 +194,6 @@ body, html {height: 100%}
 .cwt-agent-reservation-widget input{
   border-radius: 5px;
   border: 1px solid #cecece;
-  /* background-color: #cecece; */
 }
 .cwt-agent-reservation-widget select{
   border-radius: 5px;
@@ -228,7 +227,6 @@ body, html {height: 100%}
 }
 .cwt-agent-date-picker-container{
   border-radius: 5px;
-  /* border: solid 1px rgba(32, 32, 32,0.4); */
   text-align: center;
 }
 .cwt-agent-input-number-adults,
@@ -267,9 +265,6 @@ body, html {height: 100%}
   font-weight: 600;
   cursor: pointer;
 }
-/* #cwt-agent-language:focus {
-  border: 5px solid blue;
-} */
 .cwt-agent-language-option{
   color: #202020;
 }
@@ -305,9 +300,9 @@ body, html {height: 100%}
     height: auto;
     max-height: 100%;
   }
-}
+} */
 </style>
-<script src="https://cdn.jsdelivr.net/npm/litepicker/dist/litepicker.js"></script>
+<!-- <script src="https://cdn.jsdelivr.net/npm/litepicker/dist/litepicker.js"></script> -->
 </head>
 <body>
 
@@ -402,6 +397,32 @@ body, html {height: 100%}
   link.type = 'text/css';
   link.href = 'https://cdn.jsdelivr.net/gh/cwtsoftware/cwt-frontend@main/chatbot-styles.css';
   document.head.appendChild(link);
+
+  function addScriptToBody(scriptUrl, callback) {
+    const litepickerScript = document.createElement('script');
+    litepickerScript.src = scriptUrl;
+    litepickerScript.onload = callback;
+    document.head.appendChild(litepickerScript);
+  }
+
+  function initializeLitepicker() {
+    const datePicker = new Litepicker({
+      element: document.getElementById('cwt-agent-date-picker-arrival'),
+      elementEnd: document.getElementById('cwt-agent-date-picker-departure'),
+      singleMode: false,
+      allowRepick: true,
+      showTooltip: false,
+      tooltipNumber: (totalDays) => {
+        return totalDays - 1;
+      },
+      maxDate: new Date().setFullYear(new Date().getFullYear() + 1),
+      lang: datePickerLangText(),
+      format: "DD.MM.YYYY"
+    })
+  }
+
+  // Call the function with the script URL and callback
+  addScriptToBody('https://cdn.jsdelivr.net/npm/litepicker/dist/litepicker.js', initializeLitepicker);
 
   // start creating agent in dom
   var outerDiv = document.createElement('div');
@@ -897,28 +918,28 @@ body, html {height: 100%}
     }
   }
 
-  const datePicker = new Litepicker({
-    element: document.getElementById('cwt-agent-date-picker-arrival'),
-    elementEnd: document.getElementById('cwt-agent-date-picker-departure'),
-    singleMode: false,
-    allowRepick: true,
-    showTooltip: false,
-    tooltipNumber: (totalDays) => {
-      return totalDays - 1;
-    },
-    maxDate: new Date().setFullYear(new Date().getFullYear() + 1),
-    lang: datePickerLangText(),
-    format: "DD.MM.YYYY"
-  })
+  // const datePicker = new Litepicker({
+  //   element: document.getElementById('cwt-agent-date-picker-arrival'),
+  //   elementEnd: document.getElementById('cwt-agent-date-picker-departure'),
+  //   singleMode: false,
+  //   allowRepick: true,
+  //   showTooltip: false,
+  //   tooltipNumber: (totalDays) => {
+  //     return totalDays - 1;
+  //   },
+  //   maxDate: new Date().setFullYear(new Date().getFullYear() + 1),
+  //   lang: datePickerLangText(),
+  //   format: "DD.MM.YYYY"
+  // })
 
   function changeInputFieldLangText(){
     const text = inputFieldLangText()
     cwtFormInput.placeholder = text
   }
 
-  const litepicker = document.getElementsByClassName('litepicker')
-
+  
   function changeDatePickerText(){
+    const litepicker = document.getElementsByClassName('litepicker')
     const dateSubmitButton = document.getElementsByClassName('cwt-agent-input-button')
     const inputNumberAdults = document.getElementsByClassName('cwt-agent-input-number-adults-label')
     const inputNumberChildren = document.getElementsByClassName('cwt-agent-input-number-children-label')
