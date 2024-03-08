@@ -1,4 +1,10 @@
 document.addEventListener("DOMContentLoaded", function() {
+  const link = document.createElement('link');
+  link.rel = 'stylesheet';
+  link.type = 'text/css';
+  link.href = 'https://cdn.jsdelivr.net/gh/cwtsoftware/cwt-frontend@main/chatbot-styles.css';
+  document.head.appendChild(link);
+
   var outerDiv = document.createElement('div');
   outerDiv.id = 'cwt-agent';
 
