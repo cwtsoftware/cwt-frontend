@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", function() {
   link.href = 'https://cdn.jsdelivr.net/gh/cwtsoftware/cwt-frontend@main/chatbot-styles.css';
   document.head.appendChild(link);
 
+  // start creating agent in dom
   var outerDiv = document.createElement('div');
   outerDiv.id = 'cwt-agent';
 
@@ -153,7 +154,7 @@ document.addEventListener("DOMContentLoaded", function() {
   var inputForm = document.createElement('input');
   inputForm.type = 'text';
   inputForm.id = 'cwt-agent-form-input';
-  inputForm.placeholder = 'Type a Message';
+  inputForm.placeholder = inputFieldLangText();
   inputForm.autocomplete = 'off';
 
   div6.appendChild(inputForm);
@@ -478,6 +479,26 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   }
 
+  function inputFieldLangText(){
+    const lang = getLanguage()
+    switch (lang){
+      case 'English':
+        return 'Type a Message'
+        break;
+
+      case 'Italian':
+        return 'Scrivi un messaggio';
+        break;
+
+      case 'German':
+        return 'Geben Sie eine Nachricht ein';
+        break
+
+      default:
+        return 'Unesite pitanje';
+    }
+  }
+
   const datePicker = new Litepicker({
     element: document.getElementById('cwt-agent-date-picker-arrival'),
     elementEnd: document.getElementById('cwt-agent-date-picker-departure'),
@@ -491,6 +512,11 @@ document.addEventListener("DOMContentLoaded", function() {
     lang: datePickerLangText(),
     format: "DD.MM.YYYY"
   })
+
+  function changeInputFieldLangText(){
+    const text = inputFieldLangText()
+    cwtFormInput.placeholder = text
+  }
 
   const litepicker = document.getElementsByClassName('litepicker')
 
@@ -718,6 +744,7 @@ document.addEventListener("DOMContentLoaded", function() {
     storeAgentMessage(startingMessage)
 
     changeDatePickerText()
+    changeInputFieldLangText()
   });
 
   // end local storage
