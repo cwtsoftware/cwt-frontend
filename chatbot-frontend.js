@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function() {
   const link = document.createElement('link');
   link.rel = 'stylesheet';
   link.type = 'text/css';
-  link.href = 'https://cdn.jsdelivr.net/gh/cwtsoftware/cwt-frontend@main/chatbot-styles.css';
+  link.href = 'https://cdn.jsdelivr.net/gh/cwtsoftware/cwt-frontend@latest/chatbot-styles.css';
   document.head.appendChild(link);
 
   function addScriptToBody(scriptUrl, callback) {
