@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function() {
   const link = document.createElement('link');
   link.rel = 'stylesheet';
   link.type = 'text/css';
-  link.href = 'https://cdn.jsdelivr.net/gh/cwtsoftware/cwt-frontend@latest/chatbot-styles.css';
+  link.href = 'https://cdn.jsdelivr.net/gh/cwtsoftware/cwt-frontend@latest/velavrata-chatbot-styles.css';
   document.head.appendChild(link);
 
   function addScriptToBody(scriptUrl, callback) {
@@ -28,7 +28,6 @@ document.addEventListener("DOMContentLoaded", function() {
     })
   }
 
-  // Call the function with the script URL and callback
   addScriptToBody('https://cdn.jsdelivr.net/npm/litepicker/dist/litepicker.js', initializeLitepicker);
 
   // start creating agent in dom
