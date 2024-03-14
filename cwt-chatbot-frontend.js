@@ -397,6 +397,8 @@ document.addEventListener("DOMContentLoaded", function() {
     changeInputFieldLangText()
   });
 
+  body.scrollTop = body.scrollHeight;
+
   // end local storage
 
   const apiUrl = 'http://localhost:8000/api/chat_steps_json';

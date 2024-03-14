@@ -15,7 +15,7 @@ body, html {height: 100%}
   background-position: center;
   background-size: cover;
 }
-#cwt-agent{
+/* #cwt-agent{
   position: fixed;
   bottom: 5vmin;
   right: 5vmin;
@@ -197,7 +197,7 @@ body, html {height: 100%}
     height: auto;
     max-height: 100%;
   }
-}
+} */
 </style>
 </head>
 <body>
@@ -261,8 +261,9 @@ body, html {height: 100%}
 </div> -->
 
 </body>
+<script src="https://cdn.jsdelivr.net/gh/cwtsoftware/cwt-frontend@main/cwt-chatbot-frontend.js"></script>
 
-<script>
+<!-- <script>
 
   // const cssLink = 'https://cdn.jsdelivr.net/gh/cwtsoftware/cwt-frontend@main/cwt-chatbot-styles.css' 
 
@@ -668,9 +669,12 @@ body, html {height: 100%}
     changeInputFieldLangText()
   });
 
+  body.scrollTop = body.scrollHeight;
+
+
   // end local storage
 
-  const apiUrl = 'http://localhost:8000/api/chat_steps_json';
+  const apiUrl = 'http://localhost/api/chat_steps_json';
 
   cwtForm.addEventListener('keydown', function(e) {
     if (e.key === 'Enter') {
@@ -772,5 +776,5 @@ body, html {height: 100%}
       });
     }
   });
-</script>
+</script> -->
 </html>
