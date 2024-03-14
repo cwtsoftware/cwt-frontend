@@ -401,7 +401,11 @@ document.addEventListener("DOMContentLoaded", function() {
 
   // end local storage
 
-  const apiUrl = 'http://localhost:8000/api/chat_steps_json';
+  const currentUrl = window.location.href;
+  const localUrl = 'http://localhost:8000/api/chat';
+  const prodUrl = 'http://138.201.174.151:80/api/chat'
+
+  const apiUrl = currentUrl.includes("www.cwtsoftware.hr") ? prodUrl : localUrl;
 
   cwtForm.addEventListener('keydown', function(e) {
     if (e.key === 'Enter') {
