@@ -2,6 +2,7 @@
   position: fixed;
   bottom: 5vmin;
   right: 5vmin;
+  z-index: 10000;
   border-radius: 5px;
 }
 #cwt-agent-container{
@@ -90,7 +91,7 @@
 }
 #cwt-delete-message{
   opacity: 0;
-  padding: 0px 20px 0px 20px;
+  padding: 15px;
   background-color: #202020;
   color: #f5f5f5;
   position: absolute;
@@ -100,16 +101,19 @@
   border-radius: 4px;
   transition: all 0.1s ease;
 }
+#cwt-delete-message-text{
+  margin: 0px;
+}
 #cwt-messages-body{
   width: 100%;
   height: 229pt;
   overflow: auto;
 }
 #cwt-agent-form-input{
-  border-top-color: #f5f5f5;
+  border-top-color: #8e8c8c;
   border-width: 0px;
   border-top-width: 1px;
-  width: calc(100% - 12px);
+  width: 100%;
   height: 30pt;
   padding-left: 10px;
   border-bottom-left-radius: 5px;

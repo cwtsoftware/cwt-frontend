@@ -20,6 +20,7 @@ body, html {height: 100%}
   bottom: 5vmin;
   right: 5vmin;
   border-radius: 5px;
+  z-index: 10000;
 }
 #cwt-agent-container{
   z-index: 100000;
@@ -91,6 +92,9 @@ body, html {height: 100%}
   justify-content: center;
   align-items: center;
 }
+#cwt-delete-message-text{
+  margin: 0px;
+}
 #cwt-delete{
   transition: all 0.2s ease;
   position: relative;
@@ -107,7 +111,7 @@ body, html {height: 100%}
 }
 #cwt-delete-message{
   opacity: 0;
-  padding: 0px 20px 0px 20px;
+  padding: 15px;
   background-color: #202020;
   color: #f5f5f5;
   position: absolute;
@@ -123,10 +127,10 @@ body, html {height: 100%}
   overflow: auto;
 }
 #cwt-agent-form-input{
-  border-top-color: #f5f5f5;
+  border-top-color: #8e8c8c;
   border-width: 0px;
   border-top-width: 1px;
-  width: calc(100% - 12px);
+  width: 100%;
   height: 30pt;
   padding-left: 10px;
   border-bottom-left-radius: 5px;
