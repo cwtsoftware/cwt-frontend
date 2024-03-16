@@ -397,7 +397,9 @@ document.addEventListener("DOMContentLoaded", function() {
     changeInputFieldLangText()
   });
 
-  body.scrollTop = body.scrollHeight;
+  setTimeout(() => {
+    body.scrollTop = body.scrollHeight;
+  },500)
 
   // end local storage
 
