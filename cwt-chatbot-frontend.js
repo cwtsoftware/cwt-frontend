@@ -456,7 +456,7 @@ document.addEventListener("DOMContentLoaded", function() {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          'Accept-Language': getLanguage(),
+          'Cwt-Language': getLanguage(),
         },
         body: JSON.stringify(json_data),
       })
