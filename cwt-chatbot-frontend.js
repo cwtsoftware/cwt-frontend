@@ -405,7 +405,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
   const currentUrl = window.location.href;
   const localUrl = 'http://localhost:8000/api/chat';
-  const prodUrl = 'http://138.201.174.151:80/api/chat'
+  const prodUrl = 'http://138.201.174.151/api/chat'
 
   const apiUrl = currentUrl.includes("www.cwtsoftware.hr") ? prodUrl : localUrl;
 
