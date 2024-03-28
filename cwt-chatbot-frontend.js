@@ -403,11 +403,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
   // end local storage
 
-  const currentUrl = window.location.href;
-  const localUrl = 'http://localhost:8000/api/chat';
-  const prodUrl = 'http://138.201.174.151/api/chat'
-
-  const apiUrl = currentUrl.includes("www.cwtsoftware.hr") ? prodUrl : localUrl;
+  const apiUrl = 'https://analyzefileai.com/api/chat';
 
   cwtForm.addEventListener('keydown', function(e) {
     if (e.key === 'Enter') {
