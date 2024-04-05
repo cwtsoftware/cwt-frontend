@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function() {
-  const cssLink = 'https://cdn.jsdelivr.net/gh/cwtsoftware/cwt-frontend@main/cwt-chatbot-styles.css' 
+  const cssLink = 'https://cdn.jsdelivr.net/gh/cwtsoftware/cwt-frontend@latest/cwt-chatbot-styles.css' 
 
   const link = document.createElement('link');
   link.rel = 'stylesheet';
