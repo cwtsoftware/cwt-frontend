@@ -230,11 +230,11 @@ document.addEventListener("DOMContentLoaded", function() {
     cwtFormInput.placeholder = text
   }
 
-  container.style.opacity = '1';
-  container.style.visibility = 'visible';
-  agentIcon.style.opacity = '0';
-  agentIcon.style.visibility = 'hidden';
-  header.style.pointerEvents = 'auto';
+  container.style.opacity = '0';
+  container.style.visibility = 'hidden';
+  agentIcon.style.opacity = '1';
+  agentIcon.style.visibility = 'visible';
+  header.style.pointerEvents = 'none';
 
   header.addEventListener('click', function() {
     container.classList.toggle('active');
