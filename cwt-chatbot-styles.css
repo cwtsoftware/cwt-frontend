@@ -2,7 +2,7 @@
   position: fixed;
   bottom: 5vmin;
   right: 5vmin;
-  z-index: 10000;
+  visibility: hidden;
   border-radius: 5px;
 }
 #cwt-agent-container{
@@ -170,11 +170,16 @@
     position: fixed;
     bottom: 0vmin;
     right: 0vmin;
-    border-radius: 5px;
+    border-radius: 0px;
   }
   #cwt-agent-container{
     height: 100vh;
     width: 100vw;
+    border-radius: 0px;
+  }
+  #cwt-agent-header{
+    border-top-right-radius: 0px;
+    border-top-left-radius: 0px;
   }
   #cwt-agent-body{
     height: calc(100% - 35pt);
@@ -184,5 +189,9 @@
   #cwt-messages-body{
     height: auto;
     max-height: 100%;
+  }
+  #cwt-agent-form-input{
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
   }
 }
