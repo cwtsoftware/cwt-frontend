@@ -403,7 +403,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
   // end local storage
 
-  const apiUrl = 'https://analyzefileai.com/api/chat';
+  const apiUrl = 'https://cwtchatbot.cwtai.co/api/chat';
 
   cwtForm.addEventListener('keydown', function(e) {
     if (e.key === 'Enter') {
