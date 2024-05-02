@@ -130,6 +130,7 @@ body, html {height: 100%}
   height: 229pt;
   overflow: auto;
   min-height: calc(100% - 39px);
+  background-color: #f4f4f4;
 }
 #cwt-agent-form-input{
   border-top-color: #8e8c8c;
@@ -141,14 +142,29 @@ body, html {height: 100%}
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
 }
+.cwt-agent-output {
+  margin-right: 60px;
+}
+.cwt-agent-input {
+  margin-left: 60px;
+}
 .cwt-agent-output,
 .cwt-agent-input{
   white-space: pre-line;
   padding: 15px;
-  margin: 0px;
+  border-radius: 20px;
+}
+.cwt-agent-output{
+  background-color: #d8d8d8;
 }
 .cwt-agent-input{
-  background-color: #d8d8d8;
+  text-align: right;
+  background-color: color-mix(in srgb, #5d78f1 25%, white)
+}
+.cwt-agent-message-user,
+.cwt-agent-message-agent {
+  max-width: 95%;
+  margin: 10px auto;
 }
 @keyframes pulse {
   0% { transform: scale(1); }
@@ -217,6 +233,7 @@ body, html {height: 100%}
   #cwt-messages-body{
     height: auto;
     max-height: 100%;
+    position: relative;
   }
   #cwt-agent-form-input{
     padding: 0px 10px;
