@@ -443,7 +443,8 @@ document.addEventListener("DOMContentLoaded", function() {
       })
 
       const json_data = {
-        "messages": memory
+        "messages": memory,
+        "chatbot_name": "cwtsoftware_chatbot"
       }
 
       let resultArray = [];
