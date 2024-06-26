@@ -422,7 +422,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     cwtFormInput.disabled = true;
 
-    if (e.target[0].value === '' || e.target[0].value.length < 4) {
+    if (e.target[0].value === '' || e.target[0].value.length < 2) {
       console.error('Input value cannot be empty');
       
       cwtFormInput.disabled = false;
