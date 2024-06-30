@@ -2,15 +2,17 @@
   position: fixed;
   bottom: 5vmin;
   right: 5vmin;
+  z-index: 100000;
   border-radius: 5px;
+  visibility: hidden;
+  color: black;
 }
 #cwt-agent-container{
   z-index: 100000;
-  height: auto;
-  width: 30rem;
+  width: 25rem;
   background-color: #f5f5f5;
-  opacity: 1;
-  visibility: visible;
+  opacity: 0;
+  visibility: hidden;
   transition: all 0.2s ease;
   border-radius: 5px;
   position: relative;
@@ -21,7 +23,7 @@
 #cwt-agent-header{
   border-top-right-radius: 5px;
   border-top-left-radius: 5px;
-  background-color: #a75278;
+  background-color: #3D85E3;
   max-width: 100%;
   height: 3rem;
   cursor: pointer;
@@ -42,7 +44,7 @@
   border-radius: 100%;
   width: 5rem;
   height: 5rem;
-  background-color: #202020;
+  background-color: #3D85E3;
   opacity: 0;
   visibility: hidden;
   transition: all 0.2s ease;
@@ -52,14 +54,14 @@
   cursor: pointer;
   display: grid;
   place-items: center;
-  -webkit-box-shadow: 0px 5px 15px 3px rgba(17,17,17,0.4);
-  -moz-box-shadow: 0px 5px 15px 3px rgba(17,17,17,0.4);
-  box-shadow: 0px 5px 15px 3px rgba(17,17,17,0.4);
+  -webkit-box-shadow: 0px 5px 15px 1px rgba(17,17,17,0.4);
+  -moz-box-shadow: 0px 5px 15px 1px rgba(17,17,17,0.4);
+  box-shadow: 0px 5px 15px 1px rgba(17,17,17,0.4);
 }
 #cwt-agent-icon:hover{
-  -webkit-box-shadow: 0px 5px 15px 8px rgba(17,17,17,0.4);
-  -moz-box-shadow: 0px 5px 15px 8px rgba(17,17,17,0.4);
-  box-shadow: 0px 5px 15px 8px rgba(17,17,17,0.4);
+  -webkit-box-shadow: 0px 5px 15px 5px rgba(17,17,17,0.4);
+  -moz-box-shadow: 0px 5px 15px 5px rgba(17,17,17,0.4);
+  box-shadow: 0px 5px 15px 5px rgba(17,17,17,0.4);
 }
 #cwt-agent-header-left{
   display: flex;
@@ -67,12 +69,19 @@
 }
 #cwt-agent-header-left-icon{
   border-radius: 100%;
-  width: 2.5rem;
-  height: 2.5rem;
+  width: 2.3rem;
+  height: 2.3rem;
   background-color: #f5f5f5;
   display: flex;
   justify-content: center;
   align-items: center;
+  /* background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="%23535353" height="1.8em" width="1.8em"> <path stroke-linecap="round" stroke-linejoin="round" d="M20.25 8.511c.884.284 1.5 1.128 1.5 2.097v4.286c0 1.136-.847 2.1-1.98 2.193-.34.027-.68.052-1.02.072v3.091l-3-3c-1.354 0-2.694-.055-4.02-.163a2.115 2.115 0 0 1-.825-.242m9.345-8.334a2.126 2.126 0 0 0-.476-.095 48.64 48.64 0 0 0-8.048 0c-1.131.094-1.976 1.057-1.976 2.192v4.286c0 .837.46 1.58 1.155 1.951m9.345-8.334V6.637c0-1.621-1.152-3.026-2.76-3.235A48.455 48.455 0 0 0 11.25 3c-2.115 0-4.198.137-6.24.402-1.608.209-2.76 1.614-2.76 3.235v6.226c0 1.621 1.152 3.026 2.76 3.235.577.075 1.157.14 1.74.194V21l4.155-4.155"></path> </svg>');
+  background-repeat: no-repeat;
+  background-size: 72%;
+  background-position: center; */
+}
+#cwt-delete-message-text{
+  margin: 0px;
 }
 #cwt-delete{
   transition: all 0.2s ease;
@@ -87,10 +96,11 @@
 }
 #cwt-arrow-down:hover{
   fill: #a0a0a0;
+  stroke: #a0a0a0;
 }
 #cwt-delete-message{
   opacity: 0;
-  padding: 0px 20px 0px 20px;
+  padding: 15px;
   background-color: #202020;
   color: #f5f5f5;
   position: absolute;
@@ -102,27 +112,51 @@
 }
 #cwt-messages-body{
   width: 100%;
-  height: 229pt;
+  height: 329pt;
   overflow: auto;
+  min-height: calc(100% - 39px);
+  background-color: #fff;
+}
+#cwt-agent-form {
+  display: flex;
+  align-items: center;
+}
+#cwt-agent-form svg {
+  cursor: pointer;
+  margin-left: -40px; /* Adjust this value based on your design */
 }
 #cwt-agent-form-input{
-  border-top-color: #f5f5f5;
+  border-top-color: #8e8c8c;
   border-width: 0px;
   border-top-width: 1px;
-  width: calc(100% - 12px);
-  height: 30pt;
-  padding-left: 10px;
+  width: 100%;
+  max-width: 100%;
+  min-height: 2.75em;
+  padding: 0 50px 0 10px;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
+  flex: 1;
+}
+.cwt-agent-output {
+  margin-right: 60px;
+  background-color: #f0f0f0;
+  border-radius: 0px 10px 10px 10px;
+}
+.cwt-agent-input {
+  margin-left: 60px;
+  background-color: #3D85E3;
+  border-radius: 10px 0px 10px 10px;
+  color: #ffffff;
 }
 .cwt-agent-output,
 .cwt-agent-input{
   white-space: pre-line;
   padding: 15px;
-  margin: 0px;
 }
-.cwt-agent-input{
-  background-color: #d8d8d8;
+.cwt-agent-message-user,
+.cwt-agent-message-agent {
+  max-width: 95%;
+  margin: 10px auto;
 }
 @keyframes pulse {
   0% { transform: scale(1); }
@@ -140,6 +174,69 @@
   top: 1px;
   animation: pulse 1s infinite;
 }
+.cwt-agent-input-button{
+  border-radius: 20px;
+  color: #f5f5f5;
+  background-color: #327de0;
+  border: none;
+  padding: 8px 44px 8px 44px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+#cwt-agent-language{
+  background-color: inherit;
+  border: none;
+  color: white;
+  font-size: larger;
+  font-weight: 600;
+  cursor: pointer;
+}
+.cwt-agent-language-option{
+  color: #202020;
+}
+@media only screen and (max-width: 640px) {
+  #cwt-agent{
+    position: fixed;
+    bottom: 0vmin;
+    right: 0vmin;
+    border-radius: 0px;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transform: translate(0, 0) !important;
+  }
+  #cwt-agent-container{
+    /* height: 100vh;
+    width: 100vw; */
+    height: 100%;
+    width: 100%;
+    border-radius: 0px;
+  }
+  #cwt-agent-header{
+    border-top-right-radius: 0px;
+    border-top-left-radius: 0px;
+  }
+  #cwt-agent-body{
+    height: calc(100% - 60px);
+    display: flex;
+    flex-direction: column;
+  }
+  #cwt-messages-body{
+    height: auto;
+    max-height: 100%;
+    position: relative;
+  }
+  #cwt-agent-form-input{
+    padding: 0px 10px;
+    min-height: 3.75em;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    flex: 1;
+    padding-right: 40px;
+  }
+}
+/* date picker styles */
 .cwt-agent-date-button{
   border: 1px solid #327de0;
   color: #327de0;
@@ -242,20 +339,6 @@
 .cwt-agent-reservation-link{
   color: #327de0;
 }
-#cwt-agent-language{
-  background-color: inherit;
-  border: none;
-  color: white;
-  font-size: larger;
-  font-weight: 600;
-  cursor: pointer;
-}
-/* #cwt-agent-language:focus {
-  border: 5px solid blue;
-} */
-.cwt-agent-language-option{
-  color: #202020;
-}
 .cwt-agent-date-picker-inner-container{
   display: flex;
   width: 100%;
@@ -267,25 +350,4 @@
 .cwt-agent-date-picker-departure,
 .cwt-agent-date-picker-arrival{
   width: 100%;
-}
-@media only screen and (max-width: 640px) {
-  #cwt-agent{
-    position: fixed;
-    bottom: 0vmin;
-    right: 0vmin;
-    border-radius: 5px;
-  }
-  #cwt-agent-container{
-    height: 100vh;
-    width: 100vw;
-  }
-  #cwt-agent-body{
-    height: calc(100% - 35pt);
-    display: flex;
-    flex-direction: column;
-  }
-  #cwt-messages-body{
-    height: auto;
-    max-height: 100%;
-  }
 }

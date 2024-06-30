@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function() {
   const link = document.createElement('link');
   link.rel = 'stylesheet';
   link.type = 'text/css';
-  link.href = 'https://cdn.jsdelivr.net/gh/cwtsoftware/cwt-frontend@latest/velavrata-chatbot-styles.css';
+  link.href = 'https://cdn.jsdelivr.net/gh/cwtsoftware/cwt-frontend@latest/grand-hotel-chatbot-styles.css';
   document.head.appendChild(link);
 
   function addScriptToBody(scriptUrl, callback) {
@@ -122,15 +122,12 @@ document.addEventListener("DOMContentLoaded", function() {
     switch (lang){
       case 'English':
         return 'Delete messages';
-        break;
 
       case 'Italian':
         return 'Elimina messaggi';
-        break;
 
       case 'German':
         return 'Nachrichten löschen';
-        break
 
       default:
         return 'Izbriši poruke';
@@ -233,22 +230,19 @@ document.addEventListener("DOMContentLoaded", function() {
     switch (lang){
       case 'English':
         return 'All rooms';
-        break;
 
       case 'Italian':
         return 'Tutte le camere';
-        break;
 
       case 'German':
         return 'Alle Zimmer';
-        break
 
       default:
         return 'Sve sobe';
     }
   }
 
-  var options = ['Sve sobe', 'Comfort Double Room', 'Superior Double Room', 'President Double Room', 'President Double Room with sofa', 'Deluxe Studio - Pet Friendly'];
+  var options = ['Sve sobe', 'Standard Room', 'Superior Room', 'President Room'];
   for (var i = 0; i < options.length; i++) {
     var option = document.createElement('option');
     if (i == 0){
@@ -268,15 +262,12 @@ document.addEventListener("DOMContentLoaded", function() {
     switch (lang){
       case 'English':
         return 'Arrival'
-        break;
 
       case 'Italian':
         return 'Arrivo';
-        break;
 
       case 'German':
         return 'Ankunft';
-        break
 
       default:
         return 'Dolazak';
@@ -288,15 +279,12 @@ document.addEventListener("DOMContentLoaded", function() {
     switch (lang){
       case 'English':
         return 'Departure'
-        break;
 
       case 'Italian':
         return 'Partenza';
-        break;
 
       case 'German':
         return 'Abflug';
-        break
 
       default:
         return 'Odlazak';
@@ -358,15 +346,12 @@ document.addEventListener("DOMContentLoaded", function() {
     switch (lang){
       case 'English':
         return 'Adults'
-        break;
 
       case 'Italian':
         return 'Adulti';
-        break;
 
       case 'German':
         return 'Erwachsene';
-        break
 
       default:
         return 'Odrasli';
@@ -398,15 +383,12 @@ document.addEventListener("DOMContentLoaded", function() {
     switch (lang){
       case 'English':
         return 'Children'
-        break;
 
       case 'Italian':
         return 'Bambini';
-        break;
 
       case 'German':
         return 'Kinder';
-        break
 
       default:
         return 'Djeca';
@@ -440,15 +422,12 @@ document.addEventListener("DOMContentLoaded", function() {
     switch (lang){
       case 'English':
         return 'Submit'
-        break;
 
       case 'Italian':
         return 'Invia';
-        break;
 
       case 'German':
         return 'Einreichen';
-        break
 
       default:
         return 'Unesi';
@@ -489,15 +468,12 @@ document.addEventListener("DOMContentLoaded", function() {
     switch (lang){
       case 'English':
         return 'en'
-        break;
 
       case 'Italian':
         return 'it';
-        break;
 
       case 'German':
         return 'de';
-        break
 
       default:
         return 'hr';
@@ -509,15 +485,15 @@ document.addEventListener("DOMContentLoaded", function() {
     switch (lang){
       case 'English':
         return 'Type a Message'
-        break;
+        
 
       case 'Italian':
         return 'Scrivi un messaggio';
-        break;
+        
 
       case 'German':
         return 'Geben Sie eine Nachricht ein';
-        break
+        
 
       default:
         return 'Unesite pitanje';
@@ -684,15 +660,15 @@ document.addEventListener("DOMContentLoaded", function() {
     switch (language) {
       case 'English':
         starting_message = 'Welcome to the website of the Vela Vrata hotel, I am your assistant. If you need additional or specific information, feel free to ask me.'
-        break;
+        
         
       case 'German':
         starting_message = "Willkommen auf der Website des Hotels Vela Vrata, ich bin Ihr Assistent. Wenn Sie zusätzliche oder spezifische Informationen benötigen, fragen Sie mich gerne."
-        break;
+        
         
       case 'Italian':
         starting_message = "Benvenuti nel sito web dell'hotel Vela Vrata, sono il vostro assistente. Se hai bisogno di informazioni aggiuntive o specifiche, non esitare a chiedermelo."
-        break;
+        
         
       default:
         starting_message = 'Dobrodošli na stranicu hotela Vela Vrata, ja sam vaš asistent. Ako trebate dodatne ili specifične informacije slobodno me pitajte.'
@@ -792,15 +768,15 @@ document.addEventListener("DOMContentLoaded", function() {
       switch (lang){
         case 'English':
           return 'Choose date'
-          break;
+          
 
         case 'Italian':
           return 'Scegli una data';
-          break;
+          
 
         case 'German':
           return 'Wählen Sie ein Datum';
-          break
+          
 
         default:
           return 'Izaberi datum';
@@ -889,9 +865,10 @@ document.addEventListener("DOMContentLoaded", function() {
             "messages": [
               {
                 "role": "user",
-                "content": "selenium script room:" + room + " arrival:" + arrival + " departure:" + departure + " adult:" + adults + " children:" + children
+                "content": "check room availability, room:" + room + " arrival:" + arrival + " departure:" + departure + " adult:" + adults + " children:" + children
               }
-            ]
+            ],
+            "chatbot_name": "grand_hotel_chatbot"
           }
     
           let resultArray = [];
@@ -1012,7 +989,8 @@ document.addEventListener("DOMContentLoaded", function() {
       })
 
       const json_data = {
-        "messages": memory
+        "messages": memory,
+        "chatbot_name": "grand_hotel_chatbot"
       }
 
       let resultArray = [];
