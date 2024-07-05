@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function() {
   const link = document.createElement('link');
   link.rel = 'stylesheet';
   link.type = 'text/css';
-  link.href = 'https://cdn.jsdelivr.net/gh/cwtsoftware/cwt-frontend@latest/grand-hotel-chatbot-styles.css';
+  link.href = 'https://cdn.jsdelivr.net/gh/cwtsoftware/cwt-frontend@main/grand-hotel-chatbot-styles.css';
   document.head.appendChild(link);
 
   function addScriptToBody(scriptUrl, callback) {
@@ -28,6 +28,7 @@ document.addEventListener("DOMContentLoaded", function() {
     })
   }
 
+  // Call the function with the script URL and callback
   addScriptToBody('https://cdn.jsdelivr.net/npm/litepicker/dist/litepicker.js', initializeLitepicker);
 
   // start creating agent in dom
@@ -51,17 +52,13 @@ document.addEventListener("DOMContentLoaded", function() {
 
   var svgLeft = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
   svgLeft.setAttribute('xmlns', 'http://www.w3.org/2000/svg');
-  svgLeft.setAttribute('fill', 'none');
-  svgLeft.setAttribute('viewBox', '0 0 24 24');
-  svgLeft.setAttribute('stroke-width', '1.5');
-  svgLeft.setAttribute('stroke', '#535353');
-  svgLeft.setAttribute('height', '1.8em');
-  svgLeft.setAttribute('width', '1.8em');
+  svgLeft.setAttribute('fill', '#1D252B');
+  svgLeft.setAttribute('viewBox', '0 0 256 256');
+  svgLeft.setAttribute('width', '22');
+  svgLeft.setAttribute('height', '22');
 
   var pathLeft = document.createElementNS('http://www.w3.org/2000/svg', 'path');
-  pathLeft.setAttribute('stroke-linecap', 'round');
-  pathLeft.setAttribute('stroke-linejoin', 'round');
-  pathLeft.setAttribute('d', 'M20.25 8.511c.884.284 1.5 1.128 1.5 2.097v4.286c0 1.136-.847 2.1-1.98 2.193-.34.027-.68.052-1.02.072v3.091l-3-3c-1.354 0-2.694-.055-4.02-.163a2.115 2.115 0 0 1-.825-.242m9.345-8.334a2.126 2.126 0 0 0-.476-.095 48.64 48.64 0 0 0-8.048 0c-1.131.094-1.976 1.057-1.976 2.192v4.286c0 .837.46 1.58 1.155 1.951m9.345-8.334V6.637c0-1.621-1.152-3.026-2.76-3.235A48.455 48.455 0 0 0 11.25 3c-2.115 0-4.198.137-6.24.402-1.608.209-2.76 1.614-2.76 3.235v6.226c0 1.621 1.152 3.026 2.76 3.235.577.075 1.157.14 1.74.194V21l4.155-4.155');
+  pathLeft.setAttribute('d', 'M216,80H184V48a16,16,0,0,0-16-16H40A16,16,0,0,0,24,48V176a8,8,0,0,0,13,6.22L72,154V184a16,16,0,0,0,16,16h93.59L219,230.22a8,8,0,0,0,5,1.78,8,8,0,0,0,8-8V96A16,16,0,0,0,216,80ZM66.55,137.78,40,159.25V48H168v88H71.58A8,8,0,0,0,66.55,137.78ZM216,207.25l-26.55-21.47a8,8,0,0,0-5-1.78H88V152h80a16,16,0,0,0,16-16V96h32Z');
 
   svgLeft.appendChild(pathLeft);
   divHeaderLeftIcon.appendChild(svgLeft);
@@ -122,12 +119,15 @@ document.addEventListener("DOMContentLoaded", function() {
     switch (lang){
       case 'English':
         return 'Delete messages';
+        break;
 
       case 'Italian':
         return 'Elimina messaggi';
+        break;
 
       case 'German':
         return 'Nachrichten löschen';
+        break
 
       default:
         return 'Izbriši poruke';
@@ -143,22 +143,18 @@ document.addEventListener("DOMContentLoaded", function() {
 
   var svgArrowDown = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
   svgArrowDown.id = 'cwt-arrow-down';
-  svgArrowDown.setAttribute('stroke', 'currentColor');
-  svgArrowDown.setAttribute('fill', '#f5f5f5');
-  svgArrowDown.setAttribute('stroke-width', '0');
-  svgArrowDown.setAttribute('viewBox', '0 0 24 24');
-  svgArrowDown.setAttribute('height', '2em');
-  svgArrowDown.setAttribute('width', '2em');
+  svgArrowDown.setAttribute('xmlns', 'http://www.w3.org/2000/svg');
+  svgArrowDown.setAttribute('fill', '#FFFFFF');
+  svgArrowDown.setAttribute('viewBox', '0 0 256 256');
+  svgArrowDown.setAttribute('width', '22');
+  svgArrowDown.setAttribute('height', '22');
+  svgArrowDown.setAttribute('stroke', '#ffffff');
+  svgArrowDown.setAttribute('stroke-width', '7px');
 
   var pathArrowDown = document.createElementNS('http://www.w3.org/2000/svg', 'path');
-  pathArrowDown.setAttribute('fill', 'none');
-  pathArrowDown.setAttribute('d', 'M0 0h24v24H0V0z');
-
-  var pathArrowDown2 = document.createElementNS('http://www.w3.org/2000/svg', 'path');
-  pathArrowDown2.setAttribute('d', 'M7.41 8.59 12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41');
+  pathArrowDown.setAttribute('d', 'M205.66,194.34a8,8,0,0,1-11.32,11.32L128,139.31,61.66,205.66a8,8,0,0,1-11.32-11.32L116.69,128,50.34,61.66A8,8,0,0,1,61.66,50.34L128,116.69l66.34-66.35a8,8,0,0,1,11.32,11.32L139.31,128Z');
 
   svgArrowDown.appendChild(pathArrowDown);
-  svgArrowDown.appendChild(pathArrowDown2);
   divHeaderRight.appendChild(svgArrowDown);
 
   div3.appendChild(divHeaderLeft);
@@ -179,7 +175,20 @@ document.addEventListener("DOMContentLoaded", function() {
   inputForm.placeholder = inputFieldLangText();
   inputForm.autocomplete = 'off';
 
+  var svgSendIcon = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+  svgSendIcon.setAttribute('xmlns', 'http://www.w3.org/2000/svg');
+  svgSendIcon.setAttribute('width', '24');
+  svgSendIcon.setAttribute('height', '24');
+  svgSendIcon.setAttribute('fill', '#63686A');
+  svgSendIcon.setAttribute('viewBox', '0 0 256 256');
+
+  var pathSendIcon = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+  pathSendIcon.setAttribute('d', 'M231.87,114l-168-95.89A16,16,0,0,0,40.92,37.34L71.55,128,40.92,218.67A16,16,0,0,0,56,240a16.15,16.15,0,0,0,7.93-2.1l167.92-96.05a16,16,0,0,0,.05-27.89ZM56,224a.56.56,0,0,0,0-.12L85.74,136H144a8,8,0,0,0,0-16H85.74L56.06,32.16A.46.46,0,0,0,56,32l168,95.83Z');
+
+  svgSendIcon.appendChild(pathSendIcon);
+
   div6.appendChild(inputForm);
+  div6.appendChild(svgSendIcon);
 
   div4.appendChild(div5);
   div4.appendChild(div6);
@@ -196,17 +205,13 @@ document.addEventListener("DOMContentLoaded", function() {
   var svgChatIcon = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
   svgChatIcon.id = 'cwt-chat-icon';
   svgChatIcon.setAttribute('xmlns', 'http://www.w3.org/2000/svg');
-  svgChatIcon.setAttribute('fill', '#f5f5f5');
-  svgChatIcon.setAttribute('viewBox', '0 0 24 24');
-  svgChatIcon.setAttribute('stroke-width', '1');
-  svgChatIcon.setAttribute('stroke', '#202020');
-  svgChatIcon.setAttribute('height', '3.5em');
-  svgChatIcon.setAttribute('width', '3.5em');
+  svgChatIcon.setAttribute('fill', '#FFFFFF');
+  svgChatIcon.setAttribute('viewBox', '0 0 256 256');
+  svgChatIcon.setAttribute('width', '28');
+  svgChatIcon.setAttribute('height', '28');
 
   var pathChatIcon = document.createElementNS('http://www.w3.org/2000/svg', 'path');
-  pathChatIcon.setAttribute('stroke-linecap', 'round');
-  pathChatIcon.setAttribute('stroke-linejoin', 'round');
-  pathChatIcon.setAttribute('d', 'M20.25 8.511c.884.284 1.5 1.128 1.5 2.097v4.286c0 1.136-.847 2.1-1.98 2.193-.34.027-.68.052-1.02.072v3.091l-3-3c-1.354 0-2.694-.055-4.02-.163a2.115 2.115 0 0 1-.825-.242m9.345-8.334a2.126 2.126 0 0 0-.476-.095 48.64 48.64 0 0 0-8.048 0c-1.131.094-1.976 1.057-1.976 2.192v4.286c0 .837.46 1.58 1.155 1.951m9.345-8.334V6.637c0-1.621-1.152-3.026-2.76-3.235A48.455 48.455 0 0 0 11.25 3c-2.115 0-4.198.137-6.24.402-1.608.209-2.76 1.614-2.76 3.235v6.226c0 1.621 1.152 3.026 2.76 3.235.577.075 1.157.14 1.74.194V21l4.155-4.155');
+  pathChatIcon.setAttribute('d', 'M216,48H40A16,16,0,0,0,24,64V224a15.84,15.84,0,0,0,9.25,14.5A16.05,16.05,0,0,0,40,240a15.89,15.89,0,0,0,10.25-3.78l.09-.07L83,208H216a16,16,0,0,0,16-16V64A16,16,0,0,0,216,48ZM40,224h0ZM216,192H80a8,8,0,0,0-5.23,1.95L40,224V64H216Z');
 
   svgChatIcon.appendChild(pathChatIcon);
   div8.appendChild(svgChatIcon);
@@ -230,19 +235,22 @@ document.addEventListener("DOMContentLoaded", function() {
     switch (lang){
       case 'English':
         return 'All rooms';
+        break;
 
       case 'Italian':
         return 'Tutte le camere';
+        break;
 
       case 'German':
         return 'Alle Zimmer';
+        break
 
       default:
         return 'Sve sobe';
     }
   }
 
-  var options = ['Sve sobe', 'Standard Room', 'Superior Room', 'President Room'];
+  var options = ['Sve sobe', 'Standard', 'Comfort', 'President'];
   for (var i = 0; i < options.length; i++) {
     var option = document.createElement('option');
     if (i == 0){
@@ -262,12 +270,15 @@ document.addEventListener("DOMContentLoaded", function() {
     switch (lang){
       case 'English':
         return 'Arrival'
+        break;
 
       case 'Italian':
         return 'Arrivo';
+        break;
 
       case 'German':
         return 'Ankunft';
+        break
 
       default:
         return 'Dolazak';
@@ -279,12 +290,15 @@ document.addEventListener("DOMContentLoaded", function() {
     switch (lang){
       case 'English':
         return 'Departure'
+        break;
 
       case 'Italian':
         return 'Partenza';
+        break;
 
       case 'German':
         return 'Abflug';
+        break
 
       default:
         return 'Odlazak';
@@ -346,12 +360,15 @@ document.addEventListener("DOMContentLoaded", function() {
     switch (lang){
       case 'English':
         return 'Adults'
+        break;
 
       case 'Italian':
         return 'Adulti';
+        break;
 
       case 'German':
         return 'Erwachsene';
+        break
 
       default:
         return 'Odrasli';
@@ -383,12 +400,15 @@ document.addEventListener("DOMContentLoaded", function() {
     switch (lang){
       case 'English':
         return 'Children'
+        break;
 
       case 'Italian':
         return 'Bambini';
+        break;
 
       case 'German':
         return 'Kinder';
+        break
 
       default:
         return 'Djeca';
@@ -422,12 +442,15 @@ document.addEventListener("DOMContentLoaded", function() {
     switch (lang){
       case 'English':
         return 'Submit'
+        break;
 
       case 'Italian':
         return 'Invia';
+        break;
 
       case 'German':
         return 'Einreichen';
+        break
 
       default:
         return 'Unesi';
@@ -468,12 +491,15 @@ document.addEventListener("DOMContentLoaded", function() {
     switch (lang){
       case 'English':
         return 'en'
+        break;
 
       case 'Italian':
         return 'it';
+        break;
 
       case 'German':
         return 'de';
+        break
 
       default:
         return 'hr';
@@ -485,15 +511,15 @@ document.addEventListener("DOMContentLoaded", function() {
     switch (lang){
       case 'English':
         return 'Type a Message'
-        
+        break;
 
       case 'Italian':
         return 'Scrivi un messaggio';
-        
+        break;
 
       case 'German':
         return 'Geben Sie eine Nachricht ein';
-        
+        break
 
       default:
         return 'Unesite pitanje';
@@ -660,15 +686,15 @@ document.addEventListener("DOMContentLoaded", function() {
     switch (language) {
       case 'English':
         starting_message = 'Welcome to the website of the Vela Vrata hotel, I am your assistant. If you need additional or specific information, feel free to ask me.'
-        
+        break;
         
       case 'German':
         starting_message = "Willkommen auf der Website des Hotels Vela Vrata, ich bin Ihr Assistent. Wenn Sie zusätzliche oder spezifische Informationen benötigen, fragen Sie mich gerne."
-        
+        break;
         
       case 'Italian':
         starting_message = "Benvenuti nel sito web dell'hotel Vela Vrata, sono il vostro assistente. Se hai bisogno di informazioni aggiuntive o specifiche, non esitare a chiedermelo."
-        
+        break;
         
       default:
         starting_message = 'Dobrodošli na stranicu hotela Vela Vrata, ja sam vaš asistent. Ako trebate dodatne ili specifične informacije slobodno me pitajte.'
@@ -750,7 +776,11 @@ document.addEventListener("DOMContentLoaded", function() {
 
   // end local storage
 
-  const apiUrl = 'http://localhost:8000/api/chat_steps_json';
+  const currentUrl = window.location.href;
+  const localUrl = 'http://localhost:8000/api/chat';
+  const prodUrl = 'https://demohotelchat.cwtai.co/api/chat'
+
+  const apiUrl = currentUrl.includes("demohotelweb.cwtai.co") ? prodUrl : localUrl;
 
   let eventListenerAdded = false
 
@@ -768,15 +798,15 @@ document.addEventListener("DOMContentLoaded", function() {
       switch (lang){
         case 'English':
           return 'Choose date'
-          
+          break;
 
         case 'Italian':
           return 'Scegli una data';
-          
+          break;
 
         case 'German':
           return 'Wählen Sie ein Datum';
-          
+          break
 
         default:
           return 'Izaberi datum';
@@ -830,8 +860,8 @@ document.addEventListener("DOMContentLoaded", function() {
           const [startDateString, endDateString] = e.target[1].value.split(" - ");
           const arrival = e.target[1].value.replace(/\./g, '/');
           const departure = e.target[2].value.replace(/\./g, '/');
-          const adults = "2"
-          const children = "0"
+          const adults = e.target[3].value
+          const children = e.target[4].value
 
           for (const dateWidgetBackground of dateWidgetBackgrounds) {
             dateWidgetBackground.style.visibility = dateWidgetBackground.style.visibility === 'hidden' || dateWidgetBackground.style.visibility === '' ? 'visible' : 'hidden';
@@ -865,7 +895,7 @@ document.addEventListener("DOMContentLoaded", function() {
             "messages": [
               {
                 "role": "user",
-                "content": "check room availability, room:" + room + " arrival:" + arrival + " departure:" + departure + " adult:" + adults + " children:" + children
+                "content": "check_booking_and_availability room:" + room + " arrival:" + arrival + " departure:" + departure + " adult:" + adults + " children:" + children + ". Format links in the following manner: [link]."
               }
             ],
             "chatbot_name": "grand_hotel_chatbot"
@@ -913,15 +943,20 @@ document.addEventListener("DOMContentLoaded", function() {
                       }
                       pump();
                     } else {
-                      const finalResult = resultArray.join('');
+                      let finalResult = resultArray.join('');
+                      
+                      const urlRegex = /(https?:\/\/[^\s]+)/;
+                      const urlMatch = urlRegex.exec(finalResult);
+                      
+                      let linkURL = urlMatch[0];
 
-                      const linkRegex = /\[([^\]]*)\]\((.*?)\)/;
-                      const linkMatch = linkRegex.exec(finalResult);
-                      
-                      const linkText = linkMatch ? linkMatch[1] : null;
-                      const linkURL = linkMatch ? linkMatch[2] : null;
-                      
-                      if(linkText != null){
+                      const indexOfBracket = linkURL.indexOf(')');
+                      if(indexOfBracket !== -1){
+                        linkURL = linkURL.substring(0, indexOfBracket);
+                      }
+
+                      if (linkURL != null) {
+                        const linkText = "booking";
                         newOutput.innerHTML += ' <a href="' + linkURL + '" target="_blank" class="cwt-agent-reservation-link">' + linkText + '</a>.';
                       }
                       body.scrollTop = body.scrollHeight;
@@ -950,111 +985,123 @@ document.addEventListener("DOMContentLoaded", function() {
     eventListenerAdded = true
   }
 
-  cwtForm.addEventListener('keydown', function(e) {
-    if (e.key === 'Enter') {
-      e.preventDefault();
+  function submitForm(e){
+    cwtFormInput.disabled = true;
 
-      cwtFormInput.disabled = true;
+    const newInputDiv = document.createElement('div');
+    newInputDiv.className = 'cwt-agent-message-user'
 
-      const newInputDiv = document.createElement('div');
-      newInputDiv.className = 'cwt-agent-message-user'
+    const newInput = document.createElement('p');
+    newInput.className = 'cwt-agent-input'
 
-      const newInput = document.createElement('p');
-      newInput.className = 'cwt-agent-input'
+    body.appendChild(newInputDiv);
+    newInputDiv.appendChild(newInput)
+    newInput.innerHTML += e.target[0].value
 
-      body.appendChild(newInputDiv);
-      newInputDiv.appendChild(newInput)
-      newInput.innerHTML += e.target.value
+    const newOutputDiv = document.createElement('div');
+    newOutputDiv.className = 'cwt-agent-message-agent'
 
-      const newOutputDiv = document.createElement('div');
-      newOutputDiv.className = 'cwt-agent-message-agent'
+    const newOutput = document.createElement('p');
+    newOutput.className = 'cwt-agent-output streaming'
+    newOutput.style.setProperty('--shouldDisplay', 'inline-block')
 
-      const newOutput = document.createElement('p');
-      newOutput.className = 'cwt-agent-output streaming'
-      newOutput.style.setProperty('--shouldDisplay', 'inline-block')
+    body.appendChild(newOutputDiv);
+    newOutputDiv.appendChild(newOutput)
 
-      body.appendChild(newOutputDiv);
-      newOutputDiv.appendChild(newOutput)
+    body.scrollTop = body.scrollHeight;
 
-      body.scrollTop = body.scrollHeight;
+    cwtForm.reset()
+    
 
-      cwtForm.reset()
+    const memory = JSON.parse(localStorage.getItem('cwt-agent')).messages.slice(-2);
+    
+    memory.push({
+      "role": "user",
+      "content": newInput.innerHTML
+    })
+
+    const json_data = {
+      "messages": memory,
+      "chatbot_name": "grand_hotel_chatbot"
+    }
+
+    let resultArray = [];
+
+    fetch(apiUrl, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept-Language': getLanguage(),
+      },
+      body: JSON.stringify(json_data),
+    })
+    .then(response => {
+      responseHeaders = response.headers;
       
-
-      const memory = JSON.parse(localStorage.getItem('cwt-agent')).messages.slice(-2);
-      
-      memory.push({
-        "role": "user",
-        "content": newInput.innerHTML
-      })
-
-      const json_data = {
-        "messages": memory,
-        "chatbot_name": "grand_hotel_chatbot"
-      }
-
-      let resultArray = [];
-
-      fetch(apiUrl, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Accept-Language': getLanguage(),
-        },
-        body: JSON.stringify(json_data),
-      })
-      .then(response => {
-        responseHeaders = response.headers;
-        
-        if (!response.ok) {
-          if (response.status === 429) {
-            console.error('Too many requests. Please try again later.');
-            // Handle 429 error here, such as displaying a message to the user
-          } else {
-            throw new Error(`HTTP error! Status: ${response.status}`);
-          }
+      if (!response.ok) {
+        if (response.status === 429) {
+          console.error('Too many requests. Please try again later.');
+          // Handle 429 error here, such as displaying a message to the user
+        } else {
+          throw new Error(`HTTP error! Status: ${response.status}`);
         }
-        
-        return response.body.getReader();
-      })
-      .then(reader => {
-        return new ReadableStream({
-          start(controller) {
-            function pump() {
-              return reader.read().then(({ done, value }) => {
-                if (!done) {
-                  const decodedValue = new TextDecoder('utf-8').decode(value);
-                  newOutput.innerHTML += decodedValue;
-                  resultArray.push(decodedValue);
+      }
+      
+      return response.body.getReader();
+    })
+    .then(reader => {
+      return new ReadableStream({
+        start(controller) {
+          function pump() {
+            return reader.read().then(({ done, value }) => {
+              if (!done) {
+                const decodedValue = new TextDecoder('utf-8').decode(value);
+                newOutput.innerHTML += decodedValue;
+                resultArray.push(decodedValue);
+                body.scrollTop = body.scrollHeight;
+                pump();
+              } else {
+                const finalResult = resultArray.join('');
+
+                const streamingElement = document.getElementsByClassName('streaming')
+                streamingElement[0].style.setProperty('--shouldDisplay', 'none')
+                streamingElement[0].classList.remove('streaming')
+                
+                const header = JSON.parse(responseHeaders.get('X-Additional-Metadata'));
+                if(header && header.show_date_picker){
+                  addDatePickerButton(newOutputDiv)
                   body.scrollTop = body.scrollHeight;
-                  pump();
-                } else {
-                  const finalResult = resultArray.join('');
-
-                  const streamingElement = document.getElementsByClassName('streaming')
-                  streamingElement[0].style.setProperty('--shouldDisplay', 'none')
-                  streamingElement[0].classList.remove('streaming')
-                  
-                  const header = JSON.parse(responseHeaders.get('X-Additional-Metadata'));
-                  if(header && header.show_date_picker){
-                    addDatePickerButton(newOutputDiv)
-                    body.scrollTop = body.scrollHeight;
-                  }
-                  storeUserMessage(newInput.innerHTML)
-                  storeAgentMessage(finalResult)
-                  cwtFormInput.disabled = false;
-                  cwtFormInput.focus();
                 }
-              });
-            }
+                storeUserMessage(newInput.innerHTML)
+                storeAgentMessage(finalResult)
+                cwtFormInput.disabled = false;
+                cwtFormInput.focus();
+              }
+            });
+          }
 
-            pump();
-          },
-        });
-      })
-      .catch(error => {
-        console.error('Error:', error);
+          pump();
+        },
       });
+    })
+    .catch(error => {
+      console.error('Error:', error);
+    });
+  }
+
+  cwtForm.addEventListener('submit', submitForm);
+
+  svgSendIcon.addEventListener('click', function(e) {
+    e.preventDefault();
+    e.stopPropagation();
+
+    cwtForm.dispatchEvent(new Event('submit'));
+  });
+  
+  cwtForm.addEventListener('keydown', function(e) {
+    if (e.key === 'Enter') {      
+      e.preventDefault();
+      cwtForm.dispatchEvent(new Event('submit'));
     }
   });
 });
