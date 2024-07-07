@@ -685,19 +685,19 @@ document.addEventListener("DOMContentLoaded", function() {
 
     switch (language) {
       case 'English':
-        starting_message = 'Welcome to the website of the Vela Vrata hotel, I am your assistant. If you need additional or specific information, feel free to ask me.'
+        starting_message = 'Welcome to the website of the Grand Vrata hotel, I am your assistant. If you need additional or specific information, feel free to ask me.'
         break;
         
       case 'German':
-        starting_message = "Willkommen auf der Website des Hotels Vela Vrata, ich bin Ihr Assistent. Wenn Sie zusätzliche oder spezifische Informationen benötigen, fragen Sie mich gerne."
+        starting_message = "Willkommen auf der Website des Hotels Grand Vrata, ich bin Ihr Assistent. Wenn Sie zusätzliche oder spezifische Informationen benötigen, fragen Sie mich gerne."
         break;
         
       case 'Italian':
-        starting_message = "Benvenuti nel sito web dell'hotel Vela Vrata, sono il vostro assistente. Se hai bisogno di informazioni aggiuntive o specifiche, non esitare a chiedermelo."
+        starting_message = "Benvenuti nel sito web dell'hotel Grand Vrata, sono il vostro assistente. Se hai bisogno di informazioni aggiuntive o specifiche, non esitare a chiedermelo."
         break;
         
       default:
-        starting_message = 'Dobrodošli na stranicu hotela Vela Vrata, ja sam vaš asistent. Ako trebate dodatne ili specifične informacije slobodno me pitajte.'
+        starting_message = 'Dobrodošli na stranicu hotela Grand Vrata, ja sam vaš asistent. Ako trebate dodatne ili specifične informacije slobodno me pitajte.'
     }
 
     return starting_message;
