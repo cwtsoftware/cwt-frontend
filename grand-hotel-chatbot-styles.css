@@ -242,8 +242,9 @@
   color: #327de0;
   padding: 8px 24px 8px 24px;
   border-radius: 20px;
-  margin-left: 25px;
-  margin-bottom: 15px;
+  /* margin-left: 25px;
+  margin-bottom: 15px; */
+  margin: 10px 0px;
   cursor: pointer;
 }
 .cwt-agent-reservation-widget-background{
