@@ -1,4 +1,9 @@
 document.addEventListener("DOMContentLoaded", function() {
+  const isLoaded = document.getElementById("cwt-agent")
+  if(isLoaded){
+    return
+  }
+
   const cssLink = 'https://cdn.jsdelivr.net/gh/cwtsoftware/cwt-frontend@latest/cwt-chatbot-styles.css' 
 
   const link = document.createElement('link');

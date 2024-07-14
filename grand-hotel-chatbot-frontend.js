@@ -1,4 +1,9 @@
 document.addEventListener("DOMContentLoaded", function() {
+  const isLoaded = document.getElementById("cwt-agent")
+  if(isLoaded){
+    return
+  }
+
   const link = document.createElement('link');
   link.rel = 'stylesheet';
   link.type = 'text/css';
