@@ -24,6 +24,7 @@ body, html {height: 100%}
   border-radius: 5px;
   visibility: hidden;
   color: black;
+  font-family: 'Inter';
 }
 #cwt-agent-container{
   z-index: 9998;
@@ -141,7 +142,8 @@ body, html {height: 100%}
 }
 #cwt-agent-form svg {
   cursor: pointer;
-  margin-left: -40px; /* Adjust this value based on your design */
+  position: absolute;
+  right: 10px;
 }
 #cwt-agent-form-input{
   border-top-color: #8e8c8c;
@@ -153,7 +155,6 @@ body, html {height: 100%}
   padding: 0 50px 0 10px;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
-  flex: 1;
 }
 .cwt-agent-output {
   margin-right: 60px;
@@ -489,6 +490,12 @@ body, html {height: 100%}
       format: "DD.MM.YYYY"
     })
   }
+
+  const fontLink = 'https://fonts.googleapis.com/css?family=Inter' 
+  const fontLinkElement = document.createElement('link');
+  fontLinkElement.rel = 'stylesheet';
+  fontLinkElement.href = fontLink;
+  document.head.appendChild(fontLinkElement);
 
   // Call the function with the script URL and callback
   addScriptToBody('https://cdn.jsdelivr.net/npm/litepicker/dist/litepicker.js', initializeLitepicker);

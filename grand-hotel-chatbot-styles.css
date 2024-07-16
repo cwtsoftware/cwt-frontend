@@ -6,6 +6,7 @@
   border-radius: 5px;
   visibility: hidden;
   color: black;
+  font-family: 'Inter';
 }
 #cwt-agent-container{
   z-index: 9998;
@@ -123,7 +124,8 @@
 }
 #cwt-agent-form svg {
   cursor: pointer;
-  margin-left: -40px; /* Adjust this value based on your design */
+  position: absolute;
+  right: 10px;
 }
 #cwt-agent-form-input{
   border-top-color: #8e8c8c;
@@ -135,7 +137,6 @@
   padding: 0 50px 0 10px;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
-  flex: 1;
 }
 .cwt-agent-output {
   margin-right: 60px;

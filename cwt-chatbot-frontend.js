@@ -12,6 +12,12 @@ document.addEventListener("DOMContentLoaded", function() {
   link.href = cssLink;
   document.head.appendChild(link);
 
+  const fontLink = 'https://fonts.googleapis.com/css?family=Inter' 
+  const fontLinkElement = document.createElement('link');
+  fontLinkElement.rel = 'stylesheet';
+  fontLinkElement.href = fontLink;
+  document.head.appendChild(fontLinkElement);
+
   // start creating agent in dom
   var outerDiv = document.createElement('div');
   outerDiv.id = 'cwt-agent';

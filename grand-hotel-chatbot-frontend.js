@@ -10,6 +10,12 @@ document.addEventListener("DOMContentLoaded", function() {
   link.href = 'https://cdn.jsdelivr.net/gh/cwtsoftware/cwt-frontend@main/grand-hotel-chatbot-styles.css';
   document.head.appendChild(link);
 
+  const fontLink = 'https://fonts.googleapis.com/css?family=Inter' 
+  const fontLinkElement = document.createElement('link');
+  fontLinkElement.rel = 'stylesheet';
+  fontLinkElement.href = fontLink;
+  document.head.appendChild(fontLinkElement);
+
   function addScriptToBody(scriptUrl, callback) {
     const litepickerScript = document.createElement('script');
     litepickerScript.src = scriptUrl;
