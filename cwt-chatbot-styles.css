@@ -3,7 +3,7 @@
   bottom: 5vmin;
   right: 5vmin;
   z-index: 100000;
-  border-radius: 5px;
+  border-radius: 10px;
   visibility: hidden;
   color: black;
   font-family: 'Inter';
@@ -15,15 +15,16 @@
   opacity: 0;
   visibility: hidden;
   transition: all 0.2s ease;
-  border-radius: 5px;
+  border-radius: 10px;
   position: relative;
   -webkit-box-shadow: 3px 3px 10px 2px rgba(17,17,17,0.4);
   -moz-box-shadow: 3px 3px 10px 2px rgba(17,17,17,0.4);
   box-shadow: 3px 3px 10px 2px rgba(17,17,17,0.4);
 }
 #cwt-agent-header{
-  border-top-right-radius: 5px;
-  border-top-left-radius: 5px;
+  box-shadow: 0px 4px 10px 0px #1D252B1A;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
   background-color: #3D85E3;
   max-width: 100%;
   height: 3rem;
@@ -36,7 +37,7 @@
 }
 #cwt-agent-header-right{
   display: flex;
-  gap: 10px;
+  gap: 15px;
   align-items: center;
   justify-content: center;
   position: relative;
@@ -90,14 +91,13 @@
   display: inline-block;
 }
 #cwt-delete:hover{
-  stroke: #a0a0a0;
+  scale: 125%;
 }
 #cwt-arrow-down{
   transition: all 0.2s ease;
 }
 #cwt-arrow-down:hover{
-  fill: #a0a0a0;
-  stroke: #a0a0a0;
+  scale: 125%;
 }
 #cwt-delete-message{
   opacity: 0;
@@ -129,22 +129,26 @@
 }
 #cwt-agent-form-input{
   border-top-color: #8e8c8c;
+  outline: none;
   border-width: 0px;
   border-top-width: 1px;
   width: 100%;
   max-width: 100%;
   min-height: 2.75em;
   padding: 0 50px 0 10px;
-  border-bottom-left-radius: 5px;
-  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 7px;
+  border-bottom-right-radius: 7px;
 }
 .cwt-agent-output {
-  margin-right: 60px;
+  margin-right: auto;
+  width: fit-content;
+  max-width: 85%;
   background-color: #f0f0f0;
   border-radius: 0px 10px 10px 10px;
 }
 .cwt-agent-input {
-  margin-left: 60px;
+  margin-left: auto;
+  width: fit-content;
   background-color: #3D85E3;
   border-radius: 10px 0px 10px 10px;
   color: #ffffff;
@@ -152,7 +156,7 @@
 .cwt-agent-output,
 .cwt-agent-input{
   white-space: pre-line;
-  padding: 15px;
+  padding: 10px 15px;
 }
 .cwt-agent-message-user,
 .cwt-agent-message-agent {
@@ -189,7 +193,7 @@
   border: none;
   color: white;
   font-size: larger;
-  font-weight: 600;
+  font-weight: 500;
   cursor: pointer;
 }
 .cwt-agent-language-option{
