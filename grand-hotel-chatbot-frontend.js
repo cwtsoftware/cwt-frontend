@@ -997,6 +997,14 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 
   function submitForm(e){
+    if (e.target[0].value === '' || e.target[0].value.length < 2) {
+      console.error('Input value cannot be empty');
+      
+      cwtFormInput.disabled = false;
+      cwtFormInput.focus();
+      return;
+    }
+
     cwtFormInput.disabled = true;
 
     const newInputDiv = document.createElement('div');
