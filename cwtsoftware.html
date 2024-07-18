@@ -383,6 +383,18 @@ body, html {height: 100%}
   fontLinkElement.href = fontLink;
   document.head.appendChild(fontLinkElement);
 
+  function generateUUID() {
+    let d = new Date().getTime();
+    if (typeof performance !== 'undefined' && typeof performance.now === 'function'){
+      d += performance.now(); // Use high-precision timer if available
+    }
+    return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+      const r = (d + Math.random()*16)%16 | 0;
+      d = Math.floor(d/16);
+      return (c === 'x' ? r : (r&0x3|0x8)).toString(16);
+    });
+  }
+
   // start creating agent in dom
   var outerDiv = document.createElement('div');
   outerDiv.id = 'cwt-agent';
@@ -649,6 +661,7 @@ body, html {height: 100%}
     body.innerHTML = '';
 
     localStorage.setItem('cwt-agent', '{"messages":[]}')
+    localStorage.setItem('cwt-agent-conversation-id', generateUUID());
   });
 
   language.addEventListener('click', function(e) {
@@ -711,6 +724,7 @@ body, html {height: 100%}
   
   if(!localStorageValue || localStorageValue === '{"messages":[]}'){
     localStorage.setItem('cwt-agent', '{"messages":[]}');
+    localStorage.setItem('cwt-agent-conversation-id', generateUUID());
     const startingMessage = get_starting_message(language)
     storeAgentMessage(startingMessage)
   } 
@@ -758,6 +772,7 @@ body, html {height: 100%}
     body.innerHTML = '';
     localStorage.setItem('cwt-agent', '{"messages":[]}');
     localStorage.setItem('cwt-agent-language', e.target.value);
+    localStorage.setItem('cwt-agent-conversation-id', generateUUID());
     
     const startingMessage = get_starting_message(e.target.value)
 
@@ -836,7 +851,8 @@ body, html {height: 100%}
 
     const json_data = {
       "messages": memory,
-      "chatbot_name": "cwtsoftware_chatbot"
+      "chatbot_name": "cwtsoftware_chatbot",
+      "conversation_id": localStorage.getItem('cwt-agent-conversation-id') ? localStorage.getItem('cwt-agent-conversation-id') : null 
     }
 
     let resultArray = [];

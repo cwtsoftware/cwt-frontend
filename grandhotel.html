@@ -478,6 +478,18 @@ body, html {height: 100%}
     document.head.appendChild(litepickerScript);
   }
 
+  function generateUUID() {
+    let d = new Date().getTime();
+    if (typeof performance !== 'undefined' && typeof performance.now === 'function'){
+      d += performance.now(); // Use high-precision timer if available
+    }
+    return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+      const r = (d + Math.random()*16)%16 | 0;
+      d = Math.floor(d/16);
+      return (c === 'x' ? r : (r&0x3|0x8)).toString(16);
+    });
+  }
+
   function initializeLitepicker() {
     const datePicker = new Litepicker({
       element: document.getElementById('cwt-agent-date-picker-arrival'),
@@ -1114,6 +1126,7 @@ body, html {height: 100%}
     body.innerHTML = '';
 
     localStorage.setItem('cwt-agent', '{"messages":[]}')
+    localStorage.setItem('cwt-agent-conversation-id', generateUUID());
   });
 
   language.addEventListener('click', function(e) {
@@ -1176,6 +1189,7 @@ body, html {height: 100%}
   
   if(!localStorageValue || localStorageValue === '{"messages":[]}'){
     localStorage.setItem('cwt-agent', '{"messages":[]}');
+    localStorage.setItem('cwt-agent-conversation-id', generateUUID());
     const startingMessage = get_starting_message(language)
     storeAgentMessage(startingMessage)
   } 
@@ -1223,6 +1237,7 @@ body, html {height: 100%}
     body.innerHTML = '';
     localStorage.setItem('cwt-agent', '{"messages":[]}');
     localStorage.setItem('cwt-agent-language', e.target.value);
+    localStorage.setItem('cwt-agent-conversation-id', generateUUID());
     
     const startingMessage = get_starting_message(e.target.value)
 
@@ -1367,7 +1382,8 @@ body, html {height: 100%}
                 "content": "check_booking_and_availability room:" + room + " arrival:" + arrival + " departure:" + departure + " adult:" + adults + " children:" + children + ". Format links in the following manner: [link]."
               }
             ],
-            "chatbot_name": "grand_hotel_chatbot"
+            "chatbot_name": "grand_hotel_chatbot",
+            "conversation_id": localStorage.getItem('cwt-agent-conversation-id') ? localStorage.getItem('cwt-agent-conversation-id') : null 
           }
     
           let resultArray = [];
@@ -1499,7 +1515,8 @@ body, html {height: 100%}
 
     const json_data = {
       "messages": memory,
-      "chatbot_name": "grand_hotel_chatbot"
+      "chatbot_name": "grand_hotel_chatbot",
+      "conversation_id": localStorage.getItem('cwt-agent-conversation-id') ? localStorage.getItem('cwt-agent-conversation-id') : null 
     }
 
     let resultArray = [];

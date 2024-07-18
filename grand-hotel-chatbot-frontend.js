@@ -653,6 +653,7 @@ document.addEventListener("DOMContentLoaded", function() {
     body.innerHTML = '';
 
     localStorage.setItem('cwt-agent', '{"messages":[]}')
+    localStorage.setItem('cwt-agent-conversation-id', generateUUID());
   });
 
   language.addEventListener('click', function(e) {
@@ -715,6 +716,7 @@ document.addEventListener("DOMContentLoaded", function() {
   
   if(!localStorageValue || localStorageValue === '{"messages":[]}'){
     localStorage.setItem('cwt-agent', '{"messages":[]}');
+    localStorage.setItem('cwt-agent-conversation-id', generateUUID());
     const startingMessage = get_starting_message(language)
     storeAgentMessage(startingMessage)
   } 
@@ -762,6 +764,7 @@ document.addEventListener("DOMContentLoaded", function() {
     body.innerHTML = '';
     localStorage.setItem('cwt-agent', '{"messages":[]}');
     localStorage.setItem('cwt-agent-language', e.target.value);
+    localStorage.setItem('cwt-agent-conversation-id', generateUUID());
     
     const startingMessage = get_starting_message(e.target.value)
 
@@ -906,7 +909,8 @@ document.addEventListener("DOMContentLoaded", function() {
                 "content": "check_booking_and_availability room:" + room + " arrival:" + arrival + " departure:" + departure + " adult:" + adults + " children:" + children + ". Format links in the following manner: [link]."
               }
             ],
-            "chatbot_name": "grand_hotel_chatbot"
+            "chatbot_name": "grand_hotel_chatbot",
+            "conversation_id": localStorage.getItem('cwt-agent-conversation-id') ? localStorage.getItem('cwt-agent-conversation-id') : null 
           }
     
           let resultArray = [];
@@ -1038,7 +1042,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
     const json_data = {
       "messages": memory,
-      "chatbot_name": "grand_hotel_chatbot"
+      "chatbot_name": "grand_hotel_chatbot",
+      "conversation_id": localStorage.getItem('cwt-agent-conversation-id') ? localStorage.getItem('cwt-agent-conversation-id') : null 
     }
 
     let resultArray = [];
