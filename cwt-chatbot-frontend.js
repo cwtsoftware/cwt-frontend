@@ -450,7 +450,7 @@ document.addEventListener("DOMContentLoaded", function() {
   const localUrl = 'http://localhost:8000/api/chat';
   const prodUrl = 'https://cwtchatbot.cwtai.co/api/chat'
 
-  const apiUrl = currentUrl.includes("www.cwtsoftware.hr") ? prodUrl : localUrl;
+  const apiUrl = currentUrl.includes("www.cwtsoftware.hr") || currentUrl.includes("chatbotapp.cwtai.co") ? prodUrl : localUrl;
 
   function submitForm(e) {
     e.preventDefault();
