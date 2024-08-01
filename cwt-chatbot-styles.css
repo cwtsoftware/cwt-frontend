@@ -1,4 +1,4 @@
-#cwt-agent{
+#seascapeai-agent{
   position: fixed;
   bottom: 5vmin;
   right: 5vmin;
@@ -8,7 +8,7 @@
   color: black;
   font-family: 'Inter';
 }
-#cwt-agent-container{
+#seascapeai-agent-container{
   z-index: 100000;
   width: 25rem;
   background-color: #f5f5f5;
@@ -21,7 +21,7 @@
   -moz-box-shadow: 3px 3px 10px 2px rgba(17,17,17,0.4);
   box-shadow: 3px 3px 10px 2px rgba(17,17,17,0.4);
 }
-#cwt-agent-header{
+#seascapeai-agent-header{
   box-shadow: 0px 4px 10px 0px #1D252B1A;
   border-top-right-radius: 10px;
   border-top-left-radius: 10px;
@@ -35,14 +35,14 @@
   padding-right: 12px;
   align-items: center;
 }
-#cwt-agent-header-right{
+#seascapeai-agent-header-right{
   display: flex;
   gap: 15px;
   align-items: center;
   justify-content: center;
   position: relative;
 }
-#cwt-agent-icon{
+#seascapeai-agent-icon{
   border-radius: 100%;
   width: 5rem;
   height: 5rem;
@@ -60,16 +60,16 @@
   -moz-box-shadow: 0px 5px 15px 1px rgba(17,17,17,0.4);
   box-shadow: 0px 5px 15px 1px rgba(17,17,17,0.4);
 }
-#cwt-agent-icon:hover{
+#seascapeai-agent-icon:hover{
   -webkit-box-shadow: 0px 5px 15px 5px rgba(17,17,17,0.4);
   -moz-box-shadow: 0px 5px 15px 5px rgba(17,17,17,0.4);
   box-shadow: 0px 5px 15px 5px rgba(17,17,17,0.4);
 }
-#cwt-agent-header-left{
+#seascapeai-agent-header-left{
   display: flex;
   gap: 10px;
 }
-#cwt-agent-header-left-icon{
+#seascapeai-agent-header-left-icon{
   border-radius: 100%;
   width: 2.3rem;
   height: 2.3rem;
@@ -82,24 +82,24 @@
   background-size: 72%;
   background-position: center; */
 }
-#cwt-delete-message-text{
+#seascapeai-delete-message-text{
   margin: 0px;
 }
-#cwt-delete{
+#seascapeai-delete{
   transition: all 0.2s ease;
   position: relative;
   display: inline-block;
 }
-#cwt-delete:hover{
+#seascapeai-delete:hover{
   scale: 125%;
 }
-#cwt-arrow-down{
+#seascapeai-arrow-down{
   transition: all 0.2s ease;
 }
-#cwt-arrow-down:hover{
+#seascapeai-arrow-down:hover{
   scale: 125%;
 }
-#cwt-delete-message{
+#seascapeai-delete-message{
   opacity: 0;
   padding: 15px;
   background-color: #202020;
@@ -111,23 +111,23 @@
   border-radius: 4px;
   transition: all 0.1s ease;
 }
-#cwt-messages-body{
+#seascapeai-messages-body{
   width: 100%;
   height: 329pt;
   overflow: auto;
   min-height: calc(100% - 39px);
   background-color: #fff;
 }
-#cwt-agent-form {
+#seascapeai-agent-form {
   display: flex;
   align-items: center;
 }
-#cwt-agent-form svg {
+#seascapeai-agent-form svg {
   cursor: pointer;
   position: absolute;
   right: 10px;
 }
-#cwt-agent-form-input{
+#seascapeai-agent-form-input{
   border-top-color: #8e8c8c;
   outline: none;
   border-width: 0px;
@@ -139,14 +139,14 @@
   border-bottom-left-radius: 7px;
   border-bottom-right-radius: 7px;
 }
-.cwt-agent-output {
+.seascapeai-agent-output {
   margin-right: auto;
   width: fit-content;
   max-width: 85%;
   background-color: #f0f0f0;
   border-radius: 0px 10px 10px 10px;
 }
-.cwt-agent-input {
+.seascapeai-agent-input {
   margin-left: auto;
   width: fit-content;
   max-width: 85%;
@@ -154,13 +154,13 @@
   border-radius: 10px 0px 10px 10px;
   color: #ffffff;
 }
-.cwt-agent-output,
-.cwt-agent-input{
+.seascapeai-agent-output,
+.seascapeai-agent-input{
   white-space: pre-line;
   padding: 10px 15px;
 }
-.cwt-agent-message-user,
-.cwt-agent-message-agent {
+.seascapeai-agent-message-user,
+.seascapeai-agent-message-agent {
   max-width: 95%;
   margin: 10px auto;
 }
@@ -169,7 +169,7 @@
   50% { transform: scale(1.2); }
   100% { transform: scale(1); }
 }
-.cwt-agent-output::after{
+.seascapeai-agent-output::after{
   content: "";
   display: var(--shouldDisplay);
   min-height: 12px;
@@ -180,7 +180,7 @@
   top: 1px;
   animation: pulse 1s infinite;
 }
-.cwt-agent-input-button{
+.seascapeai-agent-input-button{
   border-radius: 20px;
   color: #f5f5f5;
   background-color: #327de0;
@@ -189,7 +189,7 @@
   border-radius: 20px;
   cursor: pointer;
 }
-#cwt-agent-language{
+#seascapeai-agent-language{
   background-color: inherit;
   border: none;
   color: white;
@@ -197,11 +197,11 @@
   font-weight: 500;
   cursor: pointer;
 }
-.cwt-agent-language-option{
+.seascapeai-agent-language-option{
   color: #202020;
 }
 @media only screen and (max-width: 640px) {
-  #cwt-agent{
+  #seascapeai-agent{
     position: fixed;
     bottom: 0vmin;
     right: 0vmin;
@@ -212,28 +212,28 @@
     bottom: 0;
     transform: translate(0, 0) !important;
   }
-  #cwt-agent-container{
+  #seascapeai-agent-container{
     /* height: 100vh;
     width: 100vw; */
     height: 100%;
     width: 100%;
     border-radius: 0px;
   }
-  #cwt-agent-header{
+  #seascapeai-agent-header{
     border-top-right-radius: 0px;
     border-top-left-radius: 0px;
   }
-  #cwt-agent-body{
+  #seascapeai-agent-body{
     height: calc(100% - 60px);
     display: flex;
     flex-direction: column;
   }
-  #cwt-messages-body{
+  #seascapeai-messages-body{
     height: auto;
     max-height: 100%;
     position: relative;
   }
-  #cwt-agent-form-input{
+  #seascapeai-agent-form-input{
     padding: 0px 10px;
     min-height: 3.75em;
     border-bottom-left-radius: 0px;

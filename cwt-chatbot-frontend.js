@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function() {
-  const isLoaded = document.getElementById("cwt-agent")
+  const isLoaded = document.getElementById("seascapeai-agent")
   if(isLoaded){
     return
   }
@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", function() {
   const link = document.createElement('link');
   link.rel = 'stylesheet';
   link.type = 'text/css';
-  link.href = `https://cdn.jsdelivr.net/gh/cwtsoftware/cwt-frontend@latest/cwt-chatbot-styles.css?cb=${cacheBuster}`;
+  link.href = `https://cdn.jsdelivr.net/gh/cwtsoftware/seascapeai-frontend@latest/seascapeai-chatbot-styles.css?cb=${cacheBuster}`;
   document.head.appendChild(link);
 
   const fontLink = 'https://fonts.googleapis.com/css?family=Inter' 
@@ -45,22 +45,22 @@ document.addEventListener("DOMContentLoaded", function() {
 
   // start creating agent in dom
   var outerDiv = document.createElement('div');
-  outerDiv.id = 'cwt-agent';
+  outerDiv.id = 'seascapeai-agent';
 
   var div1 = document.createElement('div');
 
   var div2 = document.createElement('div');
-  div2.id = 'cwt-agent-container';
+  div2.id = 'seascapeai-agent-container';
   div2.className = 'active';
 
   var div3 = document.createElement('div');
-  div3.id = 'cwt-agent-header';
+  div3.id = 'seascapeai-agent-header';
 
   var divHeaderLeft = document.createElement('div');
-  divHeaderLeft.id = 'cwt-agent-header-left';
+  divHeaderLeft.id = 'seascapeai-agent-header-left';
 
   var divHeaderLeftIcon = document.createElement('div');
-  divHeaderLeftIcon.id = 'cwt-agent-header-left-icon';
+  divHeaderLeftIcon.id = 'seascapeai-agent-header-left-icon';
 
   var svgLeft = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
   svgLeft.setAttribute('xmlns', 'http://www.w3.org/2000/svg');
@@ -77,21 +77,21 @@ document.addEventListener("DOMContentLoaded", function() {
   divHeaderLeft.appendChild(divHeaderLeftIcon);
 
   function getLanguage(){
-    if(localStorage.getItem('cwt-agent-language')){
-      return localStorage.getItem('cwt-agent-language')
+    if(localStorage.getItem('seascapeai-agent-language')){
+      return localStorage.getItem('seascapeai-agent-language')
     } else {
       return 'Croatian'
     }
   }
 
   var selectLanguage = document.createElement('select');
-  selectLanguage.id = 'cwt-agent-language';
+  selectLanguage.id = 'seascapeai-agent-language';
   var values = ['Croatian', 'English', 'German', 'Italian'];
   var options = ['HR', 'EN', 'DE', 'IT'];
 
   for (var i = 0; i < options.length; i++) {
     var option = document.createElement('option');
-    option.className = 'cwt-agent-language-option';
+    option.className = 'seascapeai-agent-language-option';
     option.value = values[i];
     option.textContent = options[i];
     selectLanguage.appendChild(option);
@@ -103,10 +103,10 @@ document.addEventListener("DOMContentLoaded", function() {
   divHeaderLeft.appendChild(selectLanguage);
 
   var divHeaderRight = document.createElement('div');
-  divHeaderRight.id = 'cwt-agent-header-right';
+  divHeaderRight.id = 'seascapeai-agent-header-right';
 
   var svgDelete = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
-  svgDelete.id = 'cwt-delete';
+  svgDelete.id = 'seascapeai-delete';
   svgDelete.setAttribute('xmlns', 'http://www.w3.org/2000/svg');
   svgDelete.setAttribute('fill', '#ffffff');
   svgDelete.setAttribute('viewBox', '0 0 256 256');
@@ -121,7 +121,7 @@ document.addEventListener("DOMContentLoaded", function() {
   divHeaderRight.appendChild(svgDelete);
 
   var divDeleteMessage = document.createElement('div');
-  divDeleteMessage.id = 'cwt-delete-message';
+  divDeleteMessage.id = 'seascapeai-delete-message';
 
   function getDeleteMessagesText(){
     const lang = getLanguage()
@@ -144,14 +144,14 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 
   var pDeleteMessage = document.createElement('p');
-  pDeleteMessage.id = 'cwt-delete-message-text';
+  pDeleteMessage.id = 'seascapeai-delete-message-text';
   pDeleteMessage.innerHTML = getDeleteMessagesText();
 
   divDeleteMessage.appendChild(pDeleteMessage);
   divHeaderRight.appendChild(divDeleteMessage);
 
   var svgArrowDown = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
-  svgArrowDown.id = 'cwt-arrow-down';
+  svgArrowDown.id = 'seascapeai-arrow-down';
   svgArrowDown.setAttribute('xmlns', 'http://www.w3.org/2000/svg');
   svgArrowDown.setAttribute('fill', '#FFFFFF');
   svgArrowDown.setAttribute('viewBox', '0 0 256 256');
@@ -170,17 +170,17 @@ document.addEventListener("DOMContentLoaded", function() {
   div3.appendChild(divHeaderRight);
 
   var div4 = document.createElement('div');
-  div4.id = 'cwt-agent-body';
+  div4.id = 'seascapeai-agent-body';
 
   var div5 = document.createElement('div');
-  div5.id = 'cwt-messages-body';
+  div5.id = 'seascapeai-messages-body';
 
   var div6 = document.createElement('form');
-  div6.id = 'cwt-agent-form';
+  div6.id = 'seascapeai-agent-form';
 
   var inputForm = document.createElement('input');
   inputForm.type = 'text';
-  inputForm.id = 'cwt-agent-form-input';
+  inputForm.id = 'seascapeai-agent-form-input';
   inputForm.placeholder = inputFieldLangText();
   inputForm.autocomplete = 'off';
 
@@ -206,13 +206,13 @@ document.addEventListener("DOMContentLoaded", function() {
   div2.appendChild(div4);
 
   var div7 = document.createElement('div');
-  div7.id = 'cwt-agent-button';
+  div7.id = 'seascapeai-agent-button';
 
   var div8 = document.createElement('div');
-  div8.id = 'cwt-agent-icon';
+  div8.id = 'seascapeai-agent-icon';
 
   var svgChatIcon = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
-  svgChatIcon.id = 'cwt-chat-icon';
+  svgChatIcon.id = 'seascapeai-chat-icon';
   svgChatIcon.setAttribute('xmlns', 'http://www.w3.org/2000/svg');
   svgChatIcon.setAttribute('fill', '#FFFFFF');
   svgChatIcon.setAttribute('viewBox', '0 0 256 256');
@@ -233,17 +233,17 @@ document.addEventListener("DOMContentLoaded", function() {
 
   // end creating agent in dom
 
-  const header = document.getElementById('cwt-agent-header');
-  const container = document.getElementById('cwt-agent-container');
-  const agentIcon = document.getElementById('cwt-agent-icon');
-  const chatIcon = document.getElementById('cwt-chat-icon');
-  const deleteIcon = document.getElementById('cwt-delete');
-  const deleteMessage = document.getElementById('cwt-delete-message');
-  const arrowDown = document.getElementById('cwt-arrow-down');
-  const cwtForm = document.getElementById('cwt-agent-form');
-  const cwtFormInput = document.getElementById('cwt-agent-form-input');
-  const body = document.getElementById('cwt-messages-body');
-  const language = document.getElementById('cwt-agent-language');
+  const header = document.getElementById('seascapeai-agent-header');
+  const container = document.getElementById('seascapeai-agent-container');
+  const agentIcon = document.getElementById('seascapeai-agent-icon');
+  const chatIcon = document.getElementById('seascapeai-chat-icon');
+  const deleteIcon = document.getElementById('seascapeai-delete');
+  const deleteMessage = document.getElementById('seascapeai-delete-message');
+  const arrowDown = document.getElementById('seascapeai-arrow-down');
+  const cwtForm = document.getElementById('seascapeai-agent-form');
+  const cwtFormInput = document.getElementById('seascapeai-agent-form-input');
+  const body = document.getElementById('seascapeai-messages-body');
+  const language = document.getElementById('seascapeai-agent-language');
 
   function inputFieldLangText(){
     const lang = getLanguage()
@@ -308,8 +308,8 @@ document.addEventListener("DOMContentLoaded", function() {
     e.stopPropagation();
     body.innerHTML = '';
 
-    localStorage.setItem('cwt-agent', '{"messages":[]}')
-    localStorage.setItem('cwt-agent-conversation-id', generateUUID());
+    localStorage.setItem('seascapeai-agent', '{"messages":[]}')
+    localStorage.setItem('seascapeai-agent-conversation-id', generateUUID());
   });
 
   language.addEventListener('click', function(e) {
@@ -318,7 +318,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
   // start local storage
   function storeAgentMessage(message){
-    const localStorageArray = JSON.parse(localStorage.getItem('cwt-agent'));
+    const localStorageArray = JSON.parse(localStorage.getItem('seascapeai-agent'));
 
     const json = {
       "role": "assistant",
@@ -328,11 +328,11 @@ document.addEventListener("DOMContentLoaded", function() {
     localStorageArray.messages.push(json);
     
     const string = JSON.stringify(localStorageArray);
-    localStorage.setItem('cwt-agent', string);
+    localStorage.setItem('seascapeai-agent', string);
   }
 
   function storeUserMessage(message){
-    const localStorageArray = JSON.parse(localStorage.getItem('cwt-agent'));
+    const localStorageArray = JSON.parse(localStorage.getItem('seascapeai-agent'));
 
     const json = {
       "role": "user",
@@ -342,7 +342,7 @@ document.addEventListener("DOMContentLoaded", function() {
     localStorageArray.messages.push(json);
     
     const string = JSON.stringify(localStorageArray);
-    localStorage.setItem('cwt-agent', string);
+    localStorage.setItem('seascapeai-agent', string);
   }
 
   function get_starting_message(language){
@@ -368,29 +368,29 @@ document.addEventListener("DOMContentLoaded", function() {
     return starting_message;
   }
 
-  let localStorageValue = localStorage.getItem('cwt-agent');
+  let localStorageValue = localStorage.getItem('seascapeai-agent');
   
   if(!localStorageValue || localStorageValue === '{"messages":[]}'){
-    localStorage.setItem('cwt-agent', '{"messages":[]}');
-    localStorage.setItem('cwt-agent-conversation-id', generateUUID());
+    localStorage.setItem('seascapeai-agent', '{"messages":[]}');
+    localStorage.setItem('seascapeai-agent-conversation-id', generateUUID());
     const startingMessage = get_starting_message(language)
     storeAgentMessage(startingMessage)
   } 
   
-  localStorageValue = JSON.parse(localStorage.getItem('cwt-agent')).messages
+  localStorageValue = JSON.parse(localStorage.getItem('seascapeai-agent')).messages
 
   localStorageValue.forEach((item, i) => {
     if(item.role === 'assistant'){
       // agent
       const newOutputDiv = document.createElement('div');
-      newOutputDiv.className = 'cwt-agent-message-agent'
+      newOutputDiv.className = 'seascapeai-agent-message-agent'
       
       const newOutput = document.createElement('p');
-      newOutput.className = 'cwt-agent-output'
+      newOutput.className = 'seascapeai-agent-output'
 
       let startingMessage = ""
       if(i == 0){
-        newOutput.id = 'cwt-agent-assistant-hello-message'
+        newOutput.id = 'seascapeai-agent-assistant-hello-message'
       }
 
       body.appendChild(newOutputDiv);
@@ -400,10 +400,10 @@ document.addEventListener("DOMContentLoaded", function() {
     } else if (item.role === 'user') {
       //user
       const newInputDiv = document.createElement('div');
-      newInputDiv.className = 'cwt-agent-message-user'
+      newInputDiv.className = 'seascapeai-agent-message-user'
     
       const newInput = document.createElement('p');
-      newInput.className = 'cwt-agent-input'
+      newInput.className = 'seascapeai-agent-input'
     
       body.appendChild(newInputDiv);
       newInputDiv.appendChild(newInput)
@@ -413,23 +413,23 @@ document.addEventListener("DOMContentLoaded", function() {
     body.scrollTop = body.scrollHeight;
   });
 
-  const helloMessage = document.getElementById('cwt-agent-assistant-hello-message');
+  const helloMessage = document.getElementById('seascapeai-agent-assistant-hello-message');
 
   language.addEventListener('change', (e) => {
     e.preventDefault();
     body.innerHTML = '';
-    localStorage.setItem('cwt-agent', '{"messages":[]}');
-    localStorage.setItem('cwt-agent-language', e.target.value);
-    localStorage.setItem('cwt-agent-conversation-id', generateUUID());
+    localStorage.setItem('seascapeai-agent', '{"messages":[]}');
+    localStorage.setItem('seascapeai-agent-language', e.target.value);
+    localStorage.setItem('seascapeai-agent-conversation-id', generateUUID());
     
     const startingMessage = get_starting_message(e.target.value)
 
     const newOutputDiv = document.createElement('div');
-    newOutputDiv.className = 'cwt-agent-message-agent'
+    newOutputDiv.className = 'seascapeai-agent-message-agent'
     
     const newOutput = document.createElement('p');
-    newOutput.className = 'cwt-agent-output'
-    newOutput.id = 'cwt-agent-assistant-hello-message'
+    newOutput.className = 'seascapeai-agent-output'
+    newOutput.id = 'seascapeai-agent-assistant-hello-message'
 
     body.appendChild(newOutputDiv);
     newOutputDiv.appendChild(newOutput)
@@ -467,20 +467,20 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     const newInputDiv = document.createElement('div');
-    newInputDiv.className = 'cwt-agent-message-user'
+    newInputDiv.className = 'seascapeai-agent-message-user'
 
     const newInput = document.createElement('p');
-    newInput.className = 'cwt-agent-input'
+    newInput.className = 'seascapeai-agent-input'
 
     body.appendChild(newInputDiv);
     newInputDiv.appendChild(newInput)
     newInput.innerHTML += e.target[0].value
 
     const newOutputDiv = document.createElement('div');
-    newOutputDiv.className = 'cwt-agent-message-agent'
+    newOutputDiv.className = 'seascapeai-agent-message-agent'
 
     const newOutput = document.createElement('p');
-    newOutput.className = 'cwt-agent-output streaming'
+    newOutput.className = 'seascapeai-agent-output streaming'
     newOutput.style.setProperty('--shouldDisplay', 'inline-block')
 
     body.appendChild(newOutputDiv);
@@ -490,7 +490,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     cwtForm.reset()
 
-    const memory = JSON.parse(localStorage.getItem('cwt-agent')).messages.slice(-2);
+    const memory = JSON.parse(localStorage.getItem('seascapeai-agent')).messages.slice(-2);
 
     memory.push({
       "role": "user",
@@ -500,7 +500,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const json_data = {
       "messages": memory,
       "chatbot_name": "cwtsoftware_chatbot",
-      "conversation_id": localStorage.getItem('cwt-agent-conversation-id') ? localStorage.getItem('cwt-agent-conversation-id') : null
+      "conversation_id": localStorage.getItem('seascapeai-agent-conversation-id') ? localStorage.getItem('seascapeai-agent-conversation-id') : null
     }
 
     let resultArray = [];
@@ -509,7 +509,7 @@ document.addEventListener("DOMContentLoaded", function() {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'Cwt-Language': getLanguage(),
+        'Seascapeai-Language': getLanguage(),
       },
       body: JSON.stringify(json_data),
     })
