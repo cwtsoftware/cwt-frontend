@@ -818,7 +818,7 @@ document.addEventListener("DOMContentLoaded", function() {
   const localUrl = 'http://localhost:8000/api/chat';
   const prodUrl = 'https://demohotelchat.cwtai.co/api/chat'
 
-  const apiUrl = currentUrl.includes("demohotelweb.cwtai.co") || currentUrl.includes("chatbotapp.cwtai.co") ? prodUrl : localUrl;
+  const apiUrl = currentUrl.includes("demohotelweb.seaspace.ai") || currentUrl.includes("chatbotconsole.seaspace.ai") ? prodUrl : localUrl;
 
   let eventListenerAdded = false
 
