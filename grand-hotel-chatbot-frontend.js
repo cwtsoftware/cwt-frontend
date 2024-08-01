@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function() {
-  const isLoaded = document.getElementById("seascapeai-agent")
+  const isLoaded = document.getElementById("seaspaceai-agent")
   if(isLoaded){
     return
   }
@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", function() {
   const link = document.createElement('link');
   link.rel = 'stylesheet';
   link.type = 'text/css';
-  link.href = `https://cdn.jsdelivr.net/gh/cwtsoftware/seascapeai-frontend@latest/grand-hotel-chatbot-styles.css?cb=${cacheBuster}`;
+  link.href = `https://cdn.jsdelivr.net/gh/cwtsoftware/seaspaceai-frontend@latest/grand-hotel-chatbot-styles.css?cb=${cacheBuster}`;
   document.head.appendChild(link);
 
   const fontLink = 'https://fonts.googleapis.com/css?family=Inter' 
@@ -52,8 +52,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
   function initializeLitepicker() {
     const datePicker = new Litepicker({
-      element: document.getElementById('seascapeai-agent-date-picker-arrival'),
-      elementEnd: document.getElementById('seascapeai-agent-date-picker-departure'),
+      element: document.getElementById('seaspaceai-agent-date-picker-arrival'),
+      elementEnd: document.getElementById('seaspaceai-agent-date-picker-departure'),
       singleMode: false,
       allowRepick: true,
       showTooltip: false,
@@ -71,22 +71,22 @@ document.addEventListener("DOMContentLoaded", function() {
 
   // start creating agent in dom
   var outerDiv = document.createElement('div');
-  outerDiv.id = 'seascapeai-agent';
+  outerDiv.id = 'seaspaceai-agent';
 
   var div1 = document.createElement('div');
 
   var div2 = document.createElement('div');
-  div2.id = 'seascapeai-agent-container';
+  div2.id = 'seaspaceai-agent-container';
   div2.className = 'active';
 
   var div3 = document.createElement('div');
-  div3.id = 'seascapeai-agent-header';
+  div3.id = 'seaspaceai-agent-header';
 
   var divHeaderLeft = document.createElement('div');
-  divHeaderLeft.id = 'seascapeai-agent-header-left';
+  divHeaderLeft.id = 'seaspaceai-agent-header-left';
 
   var divHeaderLeftIcon = document.createElement('div');
-  divHeaderLeftIcon.id = 'seascapeai-agent-header-left-icon';
+  divHeaderLeftIcon.id = 'seaspaceai-agent-header-left-icon';
 
   var svgLeft = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
   svgLeft.setAttribute('xmlns', 'http://www.w3.org/2000/svg');
@@ -103,21 +103,21 @@ document.addEventListener("DOMContentLoaded", function() {
   divHeaderLeft.appendChild(divHeaderLeftIcon);
 
   function getLanguage(){
-    if(localStorage.getItem('seascapeai-agent-language')){
-      return localStorage.getItem('seascapeai-agent-language')
+    if(localStorage.getItem('seaspaceai-agent-language')){
+      return localStorage.getItem('seaspaceai-agent-language')
     } else {
       return 'Croatian'
     }
   }
 
   var selectLanguage = document.createElement('select');
-  selectLanguage.id = 'seascapeai-agent-language';
+  selectLanguage.id = 'seaspaceai-agent-language';
   var values = ['Croatian', 'English', 'German', 'Italian'];
   var options = ['HR', 'EN', 'DE', 'IT'];
 
   for (var i = 0; i < options.length; i++) {
     var option = document.createElement('option');
-    option.className = 'seascapeai-agent-language-option';
+    option.className = 'seaspaceai-agent-language-option';
     option.value = values[i];
     option.textContent = options[i];
     selectLanguage.appendChild(option);
@@ -129,10 +129,10 @@ document.addEventListener("DOMContentLoaded", function() {
   divHeaderLeft.appendChild(selectLanguage);
 
   var divHeaderRight = document.createElement('div');
-  divHeaderRight.id = 'seascapeai-agent-header-right';
+  divHeaderRight.id = 'seaspaceai-agent-header-right';
 
   var svgDelete = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
-  svgDelete.id = 'seascapeai-delete';
+  svgDelete.id = 'seaspaceai-delete';
   svgDelete.setAttribute('xmlns', 'http://www.w3.org/2000/svg');
   svgDelete.setAttribute('fill', '#ffffff');
   svgDelete.setAttribute('viewBox', '0 0 256 256');
@@ -147,7 +147,7 @@ document.addEventListener("DOMContentLoaded", function() {
   divHeaderRight.appendChild(svgDelete);
 
   var divDeleteMessage = document.createElement('div');
-  divDeleteMessage.id = 'seascapeai-delete-message';
+  divDeleteMessage.id = 'seaspaceai-delete-message';
 
   function getDeleteMessagesText(){
     const lang = getLanguage()
@@ -170,14 +170,14 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 
   var pDeleteMessage = document.createElement('p');
-  pDeleteMessage.id = 'seascapeai-delete-message-text';
+  pDeleteMessage.id = 'seaspaceai-delete-message-text';
   pDeleteMessage.innerHTML = getDeleteMessagesText();
 
   divDeleteMessage.appendChild(pDeleteMessage);
   divHeaderRight.appendChild(divDeleteMessage);
 
   var svgArrowDown = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
-  svgArrowDown.id = 'seascapeai-arrow-down';
+  svgArrowDown.id = 'seaspaceai-arrow-down';
   svgArrowDown.setAttribute('xmlns', 'http://www.w3.org/2000/svg');
   svgArrowDown.setAttribute('fill', '#FFFFFF');
   svgArrowDown.setAttribute('viewBox', '0 0 256 256');
@@ -196,17 +196,17 @@ document.addEventListener("DOMContentLoaded", function() {
   div3.appendChild(divHeaderRight);
 
   var div4 = document.createElement('div');
-  div4.id = 'seascapeai-agent-body';
+  div4.id = 'seaspaceai-agent-body';
 
   var div5 = document.createElement('div');
-  div5.id = 'seascapeai-messages-body';
+  div5.id = 'seaspaceai-messages-body';
 
   var div6 = document.createElement('form');
-  div6.id = 'seascapeai-agent-form';
+  div6.id = 'seaspaceai-agent-form';
 
   var inputForm = document.createElement('input');
   inputForm.type = 'text';
-  inputForm.id = 'seascapeai-agent-form-input';
+  inputForm.id = 'seaspaceai-agent-form-input';
   inputForm.placeholder = inputFieldLangText();
   inputForm.autocomplete = 'off';
 
@@ -232,13 +232,13 @@ document.addEventListener("DOMContentLoaded", function() {
   div2.appendChild(div4);
 
   var div7 = document.createElement('div');
-  div7.id = 'seascapeai-agent-button';
+  div7.id = 'seaspaceai-agent-button';
 
   var div8 = document.createElement('div');
-  div8.id = 'seascapeai-agent-icon';
+  div8.id = 'seaspaceai-agent-icon';
 
   var svgChatIcon = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
-  svgChatIcon.id = 'seascapeai-chat-icon';
+  svgChatIcon.id = 'seaspaceai-chat-icon';
   svgChatIcon.setAttribute('xmlns', 'http://www.w3.org/2000/svg');
   svgChatIcon.setAttribute('fill', '#FFFFFF');
   svgChatIcon.setAttribute('viewBox', '0 0 256 256');
@@ -258,12 +258,12 @@ document.addEventListener("DOMContentLoaded", function() {
   document.body.appendChild(outerDiv);
 
   var form = document.createElement('form');
-  form.className = 'seascapeai-agent-reservation-widget';
+  form.className = 'seaspaceai-agent-reservation-widget';
 
   var div1 = document.createElement('div');
 
   var select = document.createElement('select');
-  select.className = 'seascapeai-agent-input-select';
+  select.className = 'seaspaceai-agent-input-select';
 
   function dateOptionsText(){
     const lang = getLanguage()
@@ -291,7 +291,7 @@ document.addEventListener("DOMContentLoaded", function() {
     if (i == 0){
       option.value = 'Sve sobe';
       option.textContent = dateOptionsText();
-      option.className = 'seascapeai-agent-room-select-first-option'
+      option.className = 'seaspaceai-agent-room-select-first-option'
     } else {
       option.value = options[i];
       option.textContent = options[i];
@@ -341,37 +341,37 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 
   var datePickerContainer = document.createElement('div');
-  datePickerContainer.className = 'seascapeai-agent-date-picker-container';
+  datePickerContainer.className = 'seaspaceai-agent-date-picker-container';
 
   var divLabels = document.createElement('div');
-  divLabels.className = 'seascapeai-agent-date-picker-labels-container'
+  divLabels.className = 'seaspaceai-agent-date-picker-labels-container'
   var divInnerContainer = document.createElement('div');
-  divInnerContainer.className = 'seascapeai-agent-date-picker-inner-container';
+  divInnerContainer.className = 'seaspaceai-agent-date-picker-inner-container';
 
   var labelArrival = document.createElement('p');
-  labelArrival.className = 'seascapeai-agent-date-picker-label-arrival';
+  labelArrival.className = 'seaspaceai-agent-date-picker-label-arrival';
   labelArrival.textContent = arrivalText();
 
   var labelDeparture = document.createElement('p');
-  labelDeparture.className = 'seascapeai-agent-date-picker-label-departure';
+  labelDeparture.className = 'seaspaceai-agent-date-picker-label-departure';
   labelDeparture.textContent = departureText();
 
   divLabels.appendChild(labelArrival);
   divLabels.appendChild(labelDeparture);
 
   var inputDatePickerArrival = document.createElement('input');
-  inputDatePickerArrival.id = 'seascapeai-agent-date-picker-arrival';
-  inputDatePickerArrival.className = 'seascapeai-agent-date-picker-arrival';
+  inputDatePickerArrival.id = 'seaspaceai-agent-date-picker-arrival';
+  inputDatePickerArrival.className = 'seaspaceai-agent-date-picker-arrival';
   inputDatePickerArrival.name = 'date-picker';
   inputDatePickerArrival.autocomplete = 'off';
 
   var dash = document.createElement('div');
   dash.textContent = '-';
-  dash.className = 'seascapeai-agent-date-picker-to';
+  dash.className = 'seaspaceai-agent-date-picker-to';
   
   var inputDatePickerDeparture = document.createElement('input');
-  inputDatePickerDeparture.id = 'seascapeai-agent-date-picker-departure';
-  inputDatePickerDeparture.className = 'seascapeai-agent-date-picker-departure';
+  inputDatePickerDeparture.id = 'seaspaceai-agent-date-picker-departure';
+  inputDatePickerDeparture.className = 'seaspaceai-agent-date-picker-departure';
   inputDatePickerDeparture.name = 'date-picker';
   inputDatePickerDeparture.autocomplete = 'off';
 
@@ -411,14 +411,14 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 
   var labelAdults = document.createElement('label');
-  labelAdults.className = 'seascapeai-agent-input-number-adults-label';
+  labelAdults.className = 'seaspaceai-agent-input-number-adults-label';
   labelAdults.htmlFor = 'adults';
   labelAdults.textContent = adultsText();
   div4.appendChild(labelAdults);
 
   var inputAdults = document.createElement('input');
   inputAdults.type = 'number';
-  inputAdults.className = 'seascapeai-agent-input-number-adults';
+  inputAdults.className = 'seaspaceai-agent-input-number-adults';
   inputAdults.max = '3';
   inputAdults.min = '0';
   inputAdults.value = '1';
@@ -453,13 +453,13 @@ document.addEventListener("DOMContentLoaded", function() {
   var labelChildren = document.createElement('label');
   labelChildren.htmlFor = 'children';
   labelChildren.textContent = childrenText();
-  labelChildren.className = 'seascapeai-agent-input-number-children-label';
+  labelChildren.className = 'seaspaceai-agent-input-number-children-label';
   div5.appendChild(labelChildren);
 
   var inputChildren = document.createElement('input');
   inputChildren.type = 'number';
   inputChildren.name = 'children';
-  inputChildren.className = 'seascapeai-agent-input-number-children';
+  inputChildren.className = 'seaspaceai-agent-input-number-children';
   inputChildren.max = '2';
   inputChildren.min = '0';
   inputChildren.value = '0';
@@ -493,7 +493,7 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 
   var button = document.createElement('button');
-  button.className = 'seascapeai-agent-input-button';
+  button.className = 'seaspaceai-agent-input-button';
   button.textContent = dateSubmitButtonText();
   button.type = 'submit';
   div6.appendChild(button);
@@ -501,23 +501,23 @@ document.addEventListener("DOMContentLoaded", function() {
   form.appendChild(div6);
 
   var outerDiv = document.createElement('div');
-  outerDiv.className = 'seascapeai-agent-reservation-widget-background';
+  outerDiv.className = 'seaspaceai-agent-reservation-widget-background';
 
   outerDiv.appendChild(form);
 
   // end creating agent in dom
 
-  const header = document.getElementById('seascapeai-agent-header');
-  const container = document.getElementById('seascapeai-agent-container');
-  const agentIcon = document.getElementById('seascapeai-agent-icon');
-  const chatIcon = document.getElementById('seascapeai-chat-icon');
-  const deleteIcon = document.getElementById('seascapeai-delete');
-  const deleteMessage = document.getElementById('seascapeai-delete-message');
-  const arrowDown = document.getElementById('seascapeai-arrow-down');
-  const cwtForm = document.getElementById('seascapeai-agent-form');
-  const cwtFormInput = document.getElementById('seascapeai-agent-form-input');
-  const body = document.getElementById('seascapeai-messages-body');
-  const language = document.getElementById('seascapeai-agent-language');
+  const header = document.getElementById('seaspaceai-agent-header');
+  const container = document.getElementById('seaspaceai-agent-container');
+  const agentIcon = document.getElementById('seaspaceai-agent-icon');
+  const chatIcon = document.getElementById('seaspaceai-chat-icon');
+  const deleteIcon = document.getElementById('seaspaceai-delete');
+  const deleteMessage = document.getElementById('seaspaceai-delete-message');
+  const arrowDown = document.getElementById('seaspaceai-arrow-down');
+  const cwtForm = document.getElementById('seaspaceai-agent-form');
+  const cwtFormInput = document.getElementById('seaspaceai-agent-form-input');
+  const body = document.getElementById('seaspaceai-messages-body');
+  const language = document.getElementById('seaspaceai-agent-language');
 
   container.appendChild(outerDiv)
 
@@ -562,8 +562,8 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 
   // const datePicker = new Litepicker({
-  //   element: document.getElementById('seascapeai-agent-date-picker-arrival'),
-  //   elementEnd: document.getElementById('seascapeai-agent-date-picker-departure'),
+  //   element: document.getElementById('seaspaceai-agent-date-picker-arrival'),
+  //   elementEnd: document.getElementById('seaspaceai-agent-date-picker-departure'),
   //   singleMode: false,
   //   allowRepick: true,
   //   showTooltip: false,
@@ -583,13 +583,13 @@ document.addEventListener("DOMContentLoaded", function() {
   
   function changeDatePickerText(){
     const litepicker = document.getElementsByClassName('litepicker')
-    const dateSubmitButton = document.getElementsByClassName('seascapeai-agent-input-button')
-    const inputNumberAdults = document.getElementsByClassName('seascapeai-agent-input-number-adults-label')
-    const inputNumberChildren = document.getElementsByClassName('seascapeai-agent-input-number-children-label')
-    const datePickerLabelArrival = document.getElementsByClassName('seascapeai-agent-date-picker-label-arrival')
-    const datePickerLabelDeparture = document.getElementsByClassName('seascapeai-agent-date-picker-label-departure')
-    const selectFirstOption = document.getElementsByClassName('seascapeai-agent-room-select-first-option')
-    const deleteMessagesText = document.getElementById('seascapeai-delete-message-text')
+    const dateSubmitButton = document.getElementsByClassName('seaspaceai-agent-input-button')
+    const inputNumberAdults = document.getElementsByClassName('seaspaceai-agent-input-number-adults-label')
+    const inputNumberChildren = document.getElementsByClassName('seaspaceai-agent-input-number-children-label')
+    const datePickerLabelArrival = document.getElementsByClassName('seaspaceai-agent-date-picker-label-arrival')
+    const datePickerLabelDeparture = document.getElementsByClassName('seaspaceai-agent-date-picker-label-departure')
+    const selectFirstOption = document.getElementsByClassName('seaspaceai-agent-room-select-first-option')
+    const deleteMessagesText = document.getElementById('seaspaceai-delete-message-text')
     
     const dateSubmitButtonTextChange = dateSubmitButtonText()
     const childrenTextChange = childrenText()
@@ -626,8 +626,8 @@ document.addEventListener("DOMContentLoaded", function() {
     deleteMessagesText.innerHTML = deleteMessagesTextChange
 
     const datePicker = new Litepicker({
-      element: document.getElementById('seascapeai-agent-date-picker-arrival'),
-      elementEnd: document.getElementById('seascapeai-agent-date-picker-departure'),
+      element: document.getElementById('seaspaceai-agent-date-picker-arrival'),
+      elementEnd: document.getElementById('seaspaceai-agent-date-picker-departure'),
       singleMode: false,
       allowRepick: true,
       showTooltip: false,
@@ -679,8 +679,8 @@ document.addEventListener("DOMContentLoaded", function() {
     e.stopPropagation();
     body.innerHTML = '';
 
-    localStorage.setItem('seascapeai-agent', '{"messages":[]}')
-    localStorage.setItem('seascapeai-agent-conversation-id', generateUUID());
+    localStorage.setItem('seaspaceai-agent', '{"messages":[]}')
+    localStorage.setItem('seaspaceai-agent-conversation-id', generateUUID());
   });
 
   language.addEventListener('click', function(e) {
@@ -689,7 +689,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
   // start local storage
   function storeAgentMessage(message){
-    const localStorageArray = JSON.parse(localStorage.getItem('seascapeai-agent'));
+    const localStorageArray = JSON.parse(localStorage.getItem('seaspaceai-agent'));
 
     const json = {
       "role": "assistant",
@@ -699,11 +699,11 @@ document.addEventListener("DOMContentLoaded", function() {
     localStorageArray.messages.push(json);
     
     const string = JSON.stringify(localStorageArray);
-    localStorage.setItem('seascapeai-agent', string);
+    localStorage.setItem('seaspaceai-agent', string);
   }
 
   function storeUserMessage(message){
-    const localStorageArray = JSON.parse(localStorage.getItem('seascapeai-agent'));
+    const localStorageArray = JSON.parse(localStorage.getItem('seaspaceai-agent'));
 
     const json = {
       "role": "user",
@@ -713,7 +713,7 @@ document.addEventListener("DOMContentLoaded", function() {
     localStorageArray.messages.push(json);
     
     const string = JSON.stringify(localStorageArray);
-    localStorage.setItem('seascapeai-agent', string);
+    localStorage.setItem('seaspaceai-agent', string);
   }
 
   function get_starting_message(language){
@@ -739,29 +739,29 @@ document.addEventListener("DOMContentLoaded", function() {
     return starting_message;
   }
 
-  let localStorageValue = localStorage.getItem('seascapeai-agent');
+  let localStorageValue = localStorage.getItem('seaspaceai-agent');
   
   if(!localStorageValue || localStorageValue === '{"messages":[]}'){
-    localStorage.setItem('seascapeai-agent', '{"messages":[]}');
-    localStorage.setItem('seascapeai-agent-conversation-id', generateUUID());
+    localStorage.setItem('seaspaceai-agent', '{"messages":[]}');
+    localStorage.setItem('seaspaceai-agent-conversation-id', generateUUID());
     const startingMessage = get_starting_message(language)
     storeAgentMessage(startingMessage)
   } 
   
-  localStorageValue = JSON.parse(localStorage.getItem('seascapeai-agent')).messages
+  localStorageValue = JSON.parse(localStorage.getItem('seaspaceai-agent')).messages
 
   localStorageValue.forEach((item, i) => {
     if(item.role === 'assistant'){
       // agent
       const newOutputDiv = document.createElement('div');
-      newOutputDiv.className = 'seascapeai-agent-message-agent'
+      newOutputDiv.className = 'seaspaceai-agent-message-agent'
       
       const newOutput = document.createElement('p');
-      newOutput.className = 'seascapeai-agent-output'
+      newOutput.className = 'seaspaceai-agent-output'
 
       let startingMessage = ""
       if(i == 0){
-        newOutput.id = 'seascapeai-agent-assistant-hello-message'
+        newOutput.id = 'seaspaceai-agent-assistant-hello-message'
       }
 
       body.appendChild(newOutputDiv);
@@ -771,10 +771,10 @@ document.addEventListener("DOMContentLoaded", function() {
     } else if (item.role === 'user') {
       //user
       const newInputDiv = document.createElement('div');
-      newInputDiv.className = 'seascapeai-agent-message-user'
+      newInputDiv.className = 'seaspaceai-agent-message-user'
     
       const newInput = document.createElement('p');
-      newInput.className = 'seascapeai-agent-input'
+      newInput.className = 'seaspaceai-agent-input'
     
       body.appendChild(newInputDiv);
       newInputDiv.appendChild(newInput)
@@ -785,22 +785,22 @@ document.addEventListener("DOMContentLoaded", function() {
     body.scrollTop = body.scrollHeight;
   });
 
-  const helloMessage = document.getElementById('seascapeai-agent-assistant-hello-message');
+  const helloMessage = document.getElementById('seaspaceai-agent-assistant-hello-message');
 
   language.addEventListener('change', (e) => {
     body.innerHTML = '';
-    localStorage.setItem('seascapeai-agent', '{"messages":[]}');
-    localStorage.setItem('seascapeai-agent-language', e.target.value);
-    localStorage.setItem('seascapeai-agent-conversation-id', generateUUID());
+    localStorage.setItem('seaspaceai-agent', '{"messages":[]}');
+    localStorage.setItem('seaspaceai-agent-language', e.target.value);
+    localStorage.setItem('seaspaceai-agent-conversation-id', generateUUID());
     
     const startingMessage = get_starting_message(e.target.value)
 
     const newOutputDiv = document.createElement('div');
-    newOutputDiv.className = 'seascapeai-agent-message-agent'
+    newOutputDiv.className = 'seaspaceai-agent-message-agent'
     
     const newOutput = document.createElement('p');
-    newOutput.className = 'seascapeai-agent-output'
-    newOutput.id = 'seascapeai-agent-assistant-hello-message'
+    newOutput.className = 'seaspaceai-agent-output'
+    newOutput.id = 'seaspaceai-agent-assistant-hello-message'
 
     body.appendChild(newOutputDiv);
     newOutputDiv.appendChild(newOutput)
@@ -824,12 +824,12 @@ document.addEventListener("DOMContentLoaded", function() {
 
   function addDatePickerButton(newOutputDiv){
     const dateContainer = document.createElement('div');
-    dateContainer.className = 'seascapeai-agent-date-button-container'
+    dateContainer.className = 'seaspaceai-agent-date-button-container'
 
     newOutputDiv.appendChild(dateContainer)
 
     const dateButton = document.createElement('button');
-    dateButton.className = 'seascapeai-agent-date-button'
+    dateButton.className = 'seaspaceai-agent-date-button'
 
     function dateButtonText(){
       const lang = getLanguage()
@@ -854,10 +854,10 @@ document.addEventListener("DOMContentLoaded", function() {
     dateButton.innerHTML = dateButtonText()
     dateContainer.appendChild(dateButton)
 
-    const dateWidgetBackgrounds = document.getElementsByClassName('seascapeai-agent-reservation-widget-background');
-    const dateWidgets = document.getElementsByClassName('seascapeai-agent-reservation-widget');
-    const dateWidgetButtons = document.getElementsByClassName('seascapeai-agent-input-button');
-    const dateWidgetForms = document.getElementsByClassName('seascapeai-agent-reservation-widget');
+    const dateWidgetBackgrounds = document.getElementsByClassName('seaspaceai-agent-reservation-widget-background');
+    const dateWidgets = document.getElementsByClassName('seaspaceai-agent-reservation-widget');
+    const dateWidgetButtons = document.getElementsByClassName('seaspaceai-agent-input-button');
+    const dateWidgetForms = document.getElementsByClassName('seaspaceai-agent-reservation-widget');
 
     dateButton.addEventListener('click', function(e) {
       e.preventDefault();
@@ -908,20 +908,20 @@ document.addEventListener("DOMContentLoaded", function() {
           }
 
           const newInputDiv = document.createElement('div');
-          newInputDiv.className = 'seascapeai-agent-message-user'
+          newInputDiv.className = 'seaspaceai-agent-message-user'
     
           const newInput = document.createElement('p');
-          newInput.className = 'seascapeai-agent-input'
+          newInput.className = 'seaspaceai-agent-input'
     
           body.appendChild(newInputDiv);
           newInputDiv.appendChild(newInput)
           newInput.innerHTML += e.target[1].value + " - " + e.target[2].value 
     
           const newOutputDiv = document.createElement('div');
-          newOutputDiv.className = 'seascapeai-agent-message-agent'
+          newOutputDiv.className = 'seaspaceai-agent-message-agent'
     
           const newOutput = document.createElement('p');
-          newOutput.className = 'seascapeai-agent-output streaming'
+          newOutput.className = 'seaspaceai-agent-output streaming'
           newOutput.style.setProperty('--shouldDisplay', 'inline-block')
     
           body.appendChild(newOutputDiv);
@@ -937,7 +937,7 @@ document.addEventListener("DOMContentLoaded", function() {
               }
             ],
             "chatbot_name": "grand_hotel_chatbot",
-            "conversation_id": localStorage.getItem('seascapeai-agent-conversation-id') ? localStorage.getItem('seascapeai-agent-conversation-id') : null 
+            "conversation_id": localStorage.getItem('seaspaceai-agent-conversation-id') ? localStorage.getItem('seaspaceai-agent-conversation-id') : null 
           }
     
           let resultArray = [];
@@ -996,7 +996,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
                       if (linkURL != null) {
                         const linkText = "booking";
-                        newOutput.innerHTML += ' <a href="' + linkURL + '" target="_blank" class="seascapeai-agent-reservation-link">' + linkText + '</a>.';
+                        newOutput.innerHTML += ' <a href="' + linkURL + '" target="_blank" class="seaspaceai-agent-reservation-link">' + linkText + '</a>.';
                       }
                       body.scrollTop = body.scrollHeight;
                       
@@ -1036,20 +1036,20 @@ document.addEventListener("DOMContentLoaded", function() {
     cwtFormInput.disabled = true;
 
     const newInputDiv = document.createElement('div');
-    newInputDiv.className = 'seascapeai-agent-message-user'
+    newInputDiv.className = 'seaspaceai-agent-message-user'
 
     const newInput = document.createElement('p');
-    newInput.className = 'seascapeai-agent-input'
+    newInput.className = 'seaspaceai-agent-input'
 
     body.appendChild(newInputDiv);
     newInputDiv.appendChild(newInput)
     newInput.innerHTML += e.target[0].value
 
     const newOutputDiv = document.createElement('div');
-    newOutputDiv.className = 'seascapeai-agent-message-agent'
+    newOutputDiv.className = 'seaspaceai-agent-message-agent'
 
     const newOutput = document.createElement('p');
-    newOutput.className = 'seascapeai-agent-output streaming'
+    newOutput.className = 'seaspaceai-agent-output streaming'
     newOutput.style.setProperty('--shouldDisplay', 'inline-block')
 
     body.appendChild(newOutputDiv);
@@ -1060,7 +1060,7 @@ document.addEventListener("DOMContentLoaded", function() {
     cwtForm.reset()
     
 
-    const memory = JSON.parse(localStorage.getItem('seascapeai-agent')).messages.slice(-2);
+    const memory = JSON.parse(localStorage.getItem('seaspaceai-agent')).messages.slice(-2);
     
     memory.push({
       "role": "user",
@@ -1070,7 +1070,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const json_data = {
       "messages": memory,
       "chatbot_name": "grand_hotel_chatbot",
-      "conversation_id": localStorage.getItem('seascapeai-agent-conversation-id') ? localStorage.getItem('seascapeai-agent-conversation-id') : null 
+      "conversation_id": localStorage.getItem('seaspaceai-agent-conversation-id') ? localStorage.getItem('seaspaceai-agent-conversation-id') : null 
     }
 
     let resultArray = [];

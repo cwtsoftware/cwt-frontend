@@ -1,4 +1,4 @@
-#seascapeai-agent{
+#seaspaceai-agent{
   position: fixed;
   bottom: 5vmin;
   right: 5vmin;
@@ -8,7 +8,7 @@
   color: black;
   font-family: 'Inter';
 }
-#seascapeai-agent-container{
+#seaspaceai-agent-container{
   z-index: 9998;
   width: 25rem;
   background-color: #f5f5f5;
@@ -21,7 +21,7 @@
   -moz-box-shadow: 3px 3px 10px 2px rgba(17,17,17,0.4);
   box-shadow: 3px 3px 10px 2px rgba(17,17,17,0.4);
 }
-#seascapeai-agent-header{
+#seaspaceai-agent-header{
   border-top-right-radius: 10px;
   border-top-left-radius: 10px;
   background-color: #3D85E3;
@@ -34,14 +34,14 @@
   padding-right: 12px;
   align-items: center;
 }
-#seascapeai-agent-header-right{
+#seaspaceai-agent-header-right{
   display: flex;
   gap: 15px;
   align-items: center;
   justify-content: center;
   position: relative;
 }
-#seascapeai-agent-icon{
+#seaspaceai-agent-icon{
   border-radius: 100%;
   width: 5rem;
   height: 5rem;
@@ -59,16 +59,16 @@
   -moz-box-shadow: 0px 5px 15px 1px rgba(17,17,17,0.4);
   box-shadow: 0px 5px 15px 1px rgba(17,17,17,0.4);
 }
-#seascapeai-agent-icon:hover{
+#seaspaceai-agent-icon:hover{
   -webkit-box-shadow: 0px 5px 15px 5px rgba(17,17,17,0.4);
   -moz-box-shadow: 0px 5px 15px 5px rgba(17,17,17,0.4);
   box-shadow: 0px 5px 15px 5px rgba(17,17,17,0.4);
 }
-#seascapeai-agent-header-left{
+#seaspaceai-agent-header-left{
   display: flex;
   gap: 10px;
 }
-#seascapeai-agent-header-left-icon{
+#seaspaceai-agent-header-left-icon{
   border-radius: 100%;
   width: 2.3rem;
   height: 2.3rem;
@@ -81,24 +81,24 @@
   background-size: 72%;
   background-position: center; */
 }
-#seascapeai-delete-message-text{
+#seaspaceai-delete-message-text{
   margin: 0px;
 }
-#seascapeai-delete{
+#seaspaceai-delete{
   transition: all 0.2s ease;
   position: relative;
   display: inline-block;
 }
-#seascapeai-delete:hover{
+#seaspaceai-delete:hover{
   scale: 125%;
 }
-#seascapeai-arrow-down{
+#seaspaceai-arrow-down{
   transition: all 0.2s ease;
 }
-#seascapeai-arrow-down:hover{
+#seaspaceai-arrow-down:hover{
   scale: 125%;
 }
-#seascapeai-delete-message{
+#seaspaceai-delete-message{
   opacity: 0;
   padding: 15px;
   background-color: #202020;
@@ -110,23 +110,23 @@
   border-radius: 4px;
   transition: all 0.1s ease;
 }
-#seascapeai-messages-body{
+#seaspaceai-messages-body{
   width: 100%;
   height: 329pt;
   overflow: auto;
   min-height: calc(100% - 39px);
   background-color: #fff;
 }
-#seascapeai-agent-form {
+#seaspaceai-agent-form {
   display: flex;
   align-items: center;
 }
-#seascapeai-agent-form svg {
+#seaspaceai-agent-form svg {
   cursor: pointer;
   position: absolute;
   right: 10px;
 }
-#seascapeai-agent-form-input{
+#seaspaceai-agent-form-input{
   border-top-color: #8e8c8c;
   outline: none;
   border-width: 0px;
@@ -138,14 +138,14 @@
   border-bottom-left-radius: 7px;
   border-bottom-right-radius: 7px;
 }
-.seascapeai-agent-output {
+.seaspaceai-agent-output {
   margin-right: auto;
   width: fit-content;
   max-width: 85%;
   background-color: #f0f0f0;
   border-radius: 0px 10px 10px 10px;
 }
-.seascapeai-agent-input {
+.seaspaceai-agent-input {
   margin-left: auto;
   width: fit-content;
   max-width: 85%;
@@ -153,13 +153,13 @@
   border-radius: 10px 0px 10px 10px;
   color: #ffffff;
 }
-.seascapeai-agent-output,
-.seascapeai-agent-input{
+.seaspaceai-agent-output,
+.seaspaceai-agent-input{
   white-space: pre-line;
   padding: 10px 15px;
 }
-.seascapeai-agent-message-user,
-.seascapeai-agent-message-agent {
+.seaspaceai-agent-message-user,
+.seaspaceai-agent-message-agent {
   max-width: 95%;
   margin: 10px auto;
 }
@@ -168,7 +168,7 @@
   50% { transform: scale(1.2); }
   100% { transform: scale(1); }
 }
-.seascapeai-agent-output::after{
+.seaspaceai-agent-output::after{
   content: "";
   display: var(--shouldDisplay);
   min-height: 12px;
@@ -179,7 +179,7 @@
   top: 1px;
   animation: pulse 1s infinite;
 }
-.seascapeai-agent-input-button{
+.seaspaceai-agent-input-button{
   border-radius: 20px;
   color: #f5f5f5;
   background-color: #327de0;
@@ -188,7 +188,7 @@
   border-radius: 20px;
   cursor: pointer;
 }
-#seascapeai-agent-language{
+#seaspaceai-agent-language{
   background-color: inherit;
   border: none;
   color: white;
@@ -196,11 +196,11 @@
   font-weight: 500;
   cursor: pointer;
 }
-.seascapeai-agent-language-option{
+.seaspaceai-agent-language-option{
   color: #202020;
 }
 @media only screen and (max-width: 640px) {
-  #seascapeai-agent{
+  #seaspaceai-agent{
     position: fixed;
     bottom: 0vmin;
     right: 0vmin;
@@ -211,28 +211,28 @@
     bottom: 0;
     transform: translate(0, 0) !important;
   }
-  #seascapeai-agent-container{
+  #seaspaceai-agent-container{
     /* height: 100vh;
     width: 100vw; */
     height: 100%;
     width: 100%;
     border-radius: 0px;
   }
-  #seascapeai-agent-header{
+  #seaspaceai-agent-header{
     border-top-right-radius: 0px;
     border-top-left-radius: 0px;
   }
-  #seascapeai-agent-body{
+  #seaspaceai-agent-body{
     height: calc(100% - 60px);
     display: flex;
     flex-direction: column;
   }
-  #seascapeai-messages-body{
+  #seaspaceai-messages-body{
     height: auto;
     max-height: 100%;
     position: relative;
   }
-  #seascapeai-agent-form-input{
+  #seaspaceai-agent-form-input{
     padding: 0px 10px;
     min-height: 3.75em;
     border-bottom-left-radius: 0px;
@@ -242,7 +242,7 @@
   }
 }
 /* date picker styles */
-.seascapeai-agent-date-button{
+.seaspaceai-agent-date-button{
   border: 1px solid #327de0;
   color: #327de0;
   padding: 8px 24px 8px 24px;
@@ -252,7 +252,7 @@
   margin-top: 10px;
   cursor: pointer;
 }
-.seascapeai-agent-reservation-widget-background{
+.seaspaceai-agent-reservation-widget-background{
   min-width: 100%;
   min-height: 100%;
   position: absolute;
@@ -266,7 +266,7 @@
   visibility: hidden;
   pointer-events: auto;
 }
-.seascapeai-agent-reservation-widget{
+.seaspaceai-agent-reservation-widget{
   width: 20rem;
   height: auto;
   display: flex;
@@ -277,63 +277,63 @@
   border-radius: 10px;
   padding: 20px;
 }
-.seascapeai-agent-reservation-widget input{
+.seaspaceai-agent-reservation-widget input{
   border-radius: 5px;
   border: 1px solid #cecece;
   /* background-color: #cecece; */
 }
-.seascapeai-agent-reservation-widget select{
+.seaspaceai-agent-reservation-widget select{
   border-radius: 5px;
   border: 1px solid #202020;
   padding: 2px;
 }
-.seascapeai-agent-reservation-widget > div:nth-child(1){
+.seaspaceai-agent-reservation-widget > div:nth-child(1){
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
-.seascapeai-agent-reservation-widget > div:nth-child(2){
+.seaspaceai-agent-reservation-widget > div:nth-child(2){
   display: flex;
   flex-direction: row;
   justify-content: center;
   gap: 26.3px;
 }
-.seascapeai-agent-reservation-widget > div:nth-child(3){
+.seaspaceai-agent-reservation-widget > div:nth-child(3){
   display: flex;
   justify-content: center;
 }
-.seascapeai-agent-reservation-widget > div:nth-child(2) div{
+.seaspaceai-agent-reservation-widget > div:nth-child(2) div{
   display: flex;
   flex-direction: column;
   gap: 2px;
   width: 50%;
 }
-.seascapeai-agent-input-number-children-label,
-.seascapeai-agent-input-number-adults-label{
+.seaspaceai-agent-input-number-children-label,
+.seaspaceai-agent-input-number-adults-label{
   text-align: center;
 }
-.seascapeai-agent-date-picker-container{
+.seaspaceai-agent-date-picker-container{
   border-radius: 5px;
   /* border: solid 1px rgba(32, 32, 32,0.4); */
   text-align: center;
 }
-.seascapeai-agent-input-number-adults,
-.seascapeai-agent-input-number-children{
+.seaspaceai-agent-input-number-adults,
+.seaspaceai-agent-input-number-children{
   width: 100%;
 }
-.seascapeai-agent-date-picker-label-arrival,
-.seascapeai-agent-date-picker-label-departure{
+.seaspaceai-agent-date-picker-label-arrival,
+.seaspaceai-agent-date-picker-label-departure{
   margin-bottom: 2px;
   margin-top: 0px;
   display: block;
   width: 50%;
 }
-.seascapeai-agent-date-picker-labels-container{
+.seaspaceai-agent-date-picker-labels-container{
   display: flex;
   justify-content: center;
   gap: 26.3px;
 }
-.seascapeai-agent-input-button{
+.seaspaceai-agent-input-button{
   border-radius: 20px;
   color: #f5f5f5;
   background-color: #327de0;
@@ -342,18 +342,18 @@
   border-radius: 20px;
   cursor: pointer;
 }
-.seascapeai-agent-reservation-link{
+.seaspaceai-agent-reservation-link{
   color: #327de0;
 }
-.seascapeai-agent-date-picker-inner-container{
+.seaspaceai-agent-date-picker-inner-container{
   display: flex;
   width: 100%;
   justify-content: center;
 }
-.seascapeai-agent-date-picker-to{
+.seaspaceai-agent-date-picker-to{
   padding: 0px 10px;
 }
-.seascapeai-agent-date-picker-departure,
-.seascapeai-agent-date-picker-arrival{
+.seaspaceai-agent-date-picker-departure,
+.seaspaceai-agent-date-picker-arrival{
   width: 100%;
 }
