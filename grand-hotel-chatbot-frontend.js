@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", function() {
   const link = document.createElement('link');
   link.rel = 'stylesheet';
   link.type = 'text/css';
-  link.href = `https://cdn.jsdelivr.net/gh/cwtsoftware/seaspaceai-frontend@latest/grand-hotel-chatbot-styles.css?cb=${cacheBuster}`;
+  link.href = `https://cdn.jsdelivr.net/gh/cwtsoftware/cwt-frontend@latest/grand-hotel-chatbot-styles.css?cb=${cacheBuster}`;
   document.head.appendChild(link);
 
   const fontLink = 'https://fonts.googleapis.com/css?family=Inter' 
