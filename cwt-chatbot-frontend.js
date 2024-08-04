@@ -350,19 +350,19 @@ document.addEventListener("DOMContentLoaded", function() {
 
     switch (language) {
       case 'English':
-        starting_message = 'Welcome to the website of the Combined Web Technologies, I am your assistant. If you need additional or specific information, feel free to ask me.'
+        starting_message = 'Welcome to the website of the SeaspaceAI, I am your assistant. If you need additional or specific information, feel free to ask me.'
         break;
         
       case 'German':
-        starting_message = "Willkommen auf der Website des Combined Web Technologies, ich bin Ihr Assistent. Wenn Sie zusätzliche oder spezifische Informationen benötigen, fragen Sie mich gerne."
+        starting_message = "Willkommen auf der Website des SeaspaceAI, ich bin Ihr Assistent. Wenn Sie zusätzliche oder spezifische Informationen benötigen, fragen Sie mich gerne."
         break;
         
       case 'Italian':
-        starting_message = "Benvenuti nel sito web Combined Web Technologies, sono il vostro assistente. Se hai bisogno di informazioni aggiuntive o specifiche, non esitare a chiedermelo."
+        starting_message = "Benvenuti nel sito web SeaspaceAI, sono il vostro assistente. Se hai bisogno di informazioni aggiuntive o specifiche, non esitare a chiedermelo."
         break;
         
       default:
-        starting_message = 'Dobrodošli na stranicu Combined Web Technologies, ja sam vaš asistent. Ako trebate dodatne ili specifične informacije slobodno me pitajte.'
+        starting_message = 'Dobrodošli na stranicu SeaspaceAI, ja sam vaš asistent. Ako trebate dodatne ili specifične informacije slobodno me pitajte.'
     }
 
     return starting_message;
